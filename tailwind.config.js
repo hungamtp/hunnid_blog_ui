@@ -7,6 +7,8 @@ module.exports = {
 
     // Or if using `src` directory:
     './src/**/*.{js,ts,jsx,tsx}',
+    './public/**/*.html',
+    './node_modules/flowbite-react/**/*.js',
   ],
   theme: {
     screens: {
@@ -18,5 +20,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
+import { Dropdown } from 'flowbite-react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,10 +17,9 @@ export default function Home() {
       <main className="root">
         <div className="navbar p-2">
           <div className="md:block sm:hidden ssm:hidden big-navbar">
-            <div class="flex justify-between">
+            <div className="flex justify-between">
               <div className="left-bar flex">
                 <div className="logo drop-shadow-md">Logo</div>
-                <div className="ml-5 drop-shadow-md">Home</div>
                 <div className="ml-5 drop-shadow-md">Blog</div>
                 <div className="ml-5 drop-shadow-md">Project</div>
                 <div className="ml-5 drop-shadow-md">Career Path</div>
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </div>
           <div className="sm:block md:hidden smal-navbar">
-            <div class="flex justify-between">
+            <div className="flex justify-between">
               <Image src={'/icon/view-list.png'} height={36} width={36} />
               <div className="right-bar flex flex-end">
                 <Image src={'/icon/sun.png'} height={24} width={24} />
@@ -42,6 +42,14 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <div>
+        <Dropdown label="Dropdown button">
+          <Dropdown.Item>Dashboard</Dropdown.Item>
+          <Dropdown.Item>Settings</Dropdown.Item>
+          <Dropdown.Item>Earnings</Dropdown.Item>
+          <Dropdown.Item>Sign out</Dropdown.Item>
+        </Dropdown>
+      </div>
     </>
   );
 }
