@@ -1,5 +1,3 @@
-import Header from '../header';
-
 const MainLayout = ({ children }) => (
   <div className="main-container">
     <header id="topnav" className="defaultscroll sticky">

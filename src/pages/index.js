@@ -1,5 +1,4 @@
 import MainLayout from 'components/layouts/main';
-import BlogLayout from '../../components/layouts/blog';
 function Home() {
   return (
     <>
