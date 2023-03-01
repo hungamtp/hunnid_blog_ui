@@ -1,5 +1,22 @@
-import '@/styles/globals.css'
+import '@/styles/globals.css';
+import React from 'react';
+import App from 'next/app';
+import MainLayout from '../../components/layouts/main';
+import DefaultLayout from '../../components/layouts/default';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props;
+    const Layout = Component.Layout || DefaultLayout;
+
+    return (
+      <MainLayout>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </MainLayout>
+    );
+  }
 }
+
+export default MyApp;
