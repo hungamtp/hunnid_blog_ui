@@ -1,36 +1,10 @@
 import MainLayout from 'components/layouts/main';
+import Link from 'next/link';
 function Home() {
   return (
     <>
       <main>
         <div>
-          <meta charSet="utf-8" />
-          <title>HHunnid</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
-          <meta name="keywords" content="Saas, Software, multi-uses, HTML, Clean, Modern" />
-          <meta name="author" content="Shreethemes" />
-          <meta name="email" content="support@shreethemes.in" />
-          <meta name="website" content="https://shreethemes.in" />
-          <meta name="Version" content="v3.8.0" />
-          <link rel="shortcut icon" href="images/favicon.ico" />
-          <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-          <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css" />
-          <link href="css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
-          <link href="css/colors/default.css" rel="stylesheet" id="color-opt" />
-
-          {/* <section className="bg-half-170 bg-light d-table w-100">
-            <div className="container">
-              <div className="row mt-5 justify-content-center">
-                <div className="col-lg-12 text-center">
-                  <div className="pages-heading">
-                    <h4 className="title mb-0"> Blog </h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> */}
           <div className="position-relative">
             <div className="shape overflow-hidden text-white">
               <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,14 +20,14 @@ function Home() {
                 <div className="col-lg-4 col-md-6 mb-4 pb-2">
                   <div className="card blog rounded border-0 shadow overflow-hidden">
                     <div className="position-relative">
-                      <img src="images/blog/01.jpg" className="card-img-top" alt="..." />
+                      <img src="asset/images/blog/01.jpg" className="card-img-top" alt="..." />
                       <div className="overlay rounded-top" />
                     </div>
                     <div className="card-body content">
                       <h5>
-                        <a href="javascript:void(0)" className="card-title title text-dark">
+                        <Link href="/post/acb" className="card-title title text-dark">
                           Design your apps in your own way
-                        </a>
+                        </Link>
                       </h5>
                       <div className="post-meta d-flex justify-content-between mt-3">
                         <ul className="list-unstyled mb-0">
@@ -89,7 +63,7 @@ function Home() {
                 <div className="col-lg-4 col-md-6 mb-4 pb-2">
                   <div className="card blog rounded border-0 shadow overflow-hidden">
                     <div className="position-relative">
-                      <img src="images/blog/02.jpg" className="card-img-top" alt="..." />
+                      <img src="asset/images/blog/02.jpg" className="card-img-top" alt="..." />
                       <div className="overlay rounded-top" />
                     </div>
                     <div className="card-body content">
@@ -132,7 +106,7 @@ function Home() {
                 <div className="col-lg-4 col-md-6 mb-4 pb-2">
                   <div className="card blog rounded border-0 shadow overflow-hidden">
                     <div className="position-relative">
-                      <img src="images/blog/03.jpg" className="card-img-top" alt="..." />
+                      <img src="asset/images/blog/03.jpg" className="card-img-top" alt="..." />
                       <div className="overlay rounded-top" />
                     </div>
                     <div className="card-body content">
@@ -175,7 +149,7 @@ function Home() {
                 <div className="col-lg-4 col-md-6 mb-4 pb-2">
                   <div className="card blog rounded border-0 shadow overflow-hidden">
                     <div className="position-relative">
-                      <img src="images/blog/04.jpg" className="card-img-top" alt="..." />
+                      <img src="asset/images/blog/04.jpg" className="card-img-top" alt="..." />
                       <div className="overlay rounded-top" />
                     </div>
                     <div className="card-body content">
@@ -218,7 +192,7 @@ function Home() {
                 <div className="col-lg-4 col-md-6 mb-4 pb-2">
                   <div className="card blog rounded border-0 shadow overflow-hidden">
                     <div className="position-relative">
-                      <img src="images/blog/05.jpg" className="card-img-top" alt="..." />
+                      <img src="asset/images/blog/05.jpg" className="card-img-top" alt="..." />
                       <div className="overlay rounded-top" />
                     </div>
                     <div className="card-body content">
@@ -261,7 +235,7 @@ function Home() {
                 <div className="col-lg-4 col-md-6 mb-4 pb-2">
                   <div className="card blog rounded border-0 shadow overflow-hidden">
                     <div className="position-relative">
-                      <img src="images/blog/06.jpg" className="card-img-top" alt="..." />
+                      <img src="asset/images/blog/06.jpg" className="card-img-top" alt="..." />
                       <div className="overlay rounded-top" />
                     </div>
                     <div className="card-body content">
@@ -304,7 +278,7 @@ function Home() {
                 <div className="col-lg-4 col-md-6 mb-4 pb-2">
                   <div className="card blog rounded border-0 shadow overflow-hidden">
                     <div className="position-relative">
-                      <img src="images/blog/07.jpg" className="card-img-top" alt="..." />
+                      <img src="asset/images/blog/07.jpg" className="card-img-top" alt="..." />
                       <div className="overlay rounded-top" />
                     </div>
                     <div className="card-body content">
@@ -347,7 +321,7 @@ function Home() {
                 <div className="col-lg-4 col-md-6 mb-4 pb-2">
                   <div className="card blog rounded border-0 shadow overflow-hidden">
                     <div className="position-relative">
-                      <img src="images/blog/08.jpg" className="card-img-top" alt="..." />
+                      <img src="asset/images/blog/08.jpg" className="card-img-top" alt="..." />
                       <div className="overlay rounded-top" />
                     </div>
                     <div className="card-body content">
@@ -429,7 +403,7 @@ function Home() {
                     <div className="row">
                       <div className="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
                         <a href="#" className="logo-footer">
-                          <img src="images/logo-light.png" height={24} alt="" />
+                          <img src="asset/images/logo-light.png" height={24} alt="" />
                         </a>
                         <p className="mt-4">Go hard or go home</p>
                         <ul className="list-unstyled social-icon foot-social-icon mb-0 mt-4">
@@ -590,27 +564,32 @@ function Home() {
                     <ul className="list-unstyled text-sm-end mb-0">
                       <li className="list-inline-item">
                         <a href="javascript:void(0)">
-                          <img src="images/payments/american-ex.png" className="avatar avatar-ex-sm" title="American Express" alt="" />
+                          <img
+                            src="asset/images/payments/american-ex.png"
+                            className="avatar avatar-ex-sm"
+                            title="American Express"
+                            alt=""
+                          />
                         </a>
                       </li>
                       <li className="list-inline-item">
                         <a href="javascript:void(0)">
-                          <img src="images/payments/discover.png" className="avatar avatar-ex-sm" title="Discover" alt="" />
+                          <img src="asset/images/payments/discover.png" className="avatar avatar-ex-sm" title="Discover" alt="" />
                         </a>
                       </li>
                       <li className="list-inline-item">
                         <a href="javascript:void(0)">
-                          <img src="images/payments/master-card.png" className="avatar avatar-ex-sm" title="Master Card" alt="" />
+                          <img src="asset/images/payments/master-card.png" className="avatar avatar-ex-sm" title="Master Card" alt="" />
                         </a>
                       </li>
                       <li className="list-inline-item">
                         <a href="javascript:void(0)">
-                          <img src="images/payments/paypal.png" className="avatar avatar-ex-sm" title="Paypal" alt="" />
+                          <img src="asset/images/payments/paypal.png" className="avatar avatar-ex-sm" title="Paypal" alt="" />
                         </a>
                       </li>
                       <li className="list-inline-item">
                         <a href="javascript:void(0)">
-                          <img src="images/payments/visa.png" className="avatar avatar-ex-sm" title="Visa" alt="" />
+                          <img src="asset/images/payments/visa.png" className="avatar avatar-ex-sm" title="Visa" alt="" />
                         </a>
                       </li>
                     </ul>
@@ -623,8 +602,8 @@ function Home() {
           <div className="offcanvas offcanvas-end bg-white shadow" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div className="offcanvas-header p-4 border-bottom">
               <h5 id="offcanvasRightLabel" className="mb-0">
-                <img src="images/logo-dark.png" height={24} className="light-version" alt="" />
-                <img src="images/logo-light.png" height={24} className="dark-version" alt="" />
+                <img src="asset/images/logo-dark.png" height={24} className="light-version" alt="" />
+                <img src="asset/images/logo-light.png" height={24} className="dark-version" alt="" />
               </h5>
               <button
                 type="button"
@@ -638,7 +617,7 @@ function Home() {
             <div className="offcanvas-body p-4">
               <div className="row">
                 <div className="col-12">
-                  <img src="images/contact.svg" className="img-fluid d-block mx-auto" style={{ maxWidth: '256px' }} alt="" />
+                  <img src="asset/images/contact.svg" className="img-fluid d-block mx-auto" style={{ maxWidth: '256px' }} alt="" />
                   <div className="card border-0 mt-5" style={{ zIndex: 1 }}>
                     <div className="card-body p-0">
                       <form method="post" name="myForm" onsubmit="return validateForm()">

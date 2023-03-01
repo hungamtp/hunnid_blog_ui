@@ -1,10 +1,10 @@
 const MainLayout = ({ children }) => (
   <div className="main-container">
-    <header id="topnav" className="defaultscroll sticky">
+    <header id="topnav" className="defaultscroll sticky ">
       <div className="container">
         <a className="logo" href="index.html">
-          <img src="images/logo-dark.png" height={24} className="logo-light-mode" alt="" />
-          <img src="images/logo-light.png" height={24} className="logo-dark-mode" alt="" />
+          <img src="/asset/images/logo-dark.png" height={24} className="logo-light-mode" alt="" />
+          <img src="/asset/images/logo-light.png" height={24} className="logo-dark-mode" alt="" />
         </a>
         <div className="menu-extras">
           <div className="menu-item">
@@ -23,7 +23,7 @@ const MainLayout = ({ children }) => (
           </li>
           <li className="list-inline-item mb-0">
             <div className="btn btn-icon btn-pills ">
-              <img src="icon/sun.png" />
+              <img src="/asset/icon/sun.png" />
             </div>
           </li>
         </ul>
