@@ -11,9 +11,8 @@ const BlogDetail = () => {
             <div className="col-lg-12 text-center">
               <div className="pages-heading">
                 <h3 className="title text-white title-dark mb-0">
-                  {' '}
                   Smartest Applications for <br />
-                  Your Business{' '}
+                  Your Business
                 </h3>
               </div>
             </div>
@@ -35,7 +34,7 @@ const BlogDetail = () => {
               </ul>
             </nav>
           </div>
-        </div>{' '}
+        </div>
         {/*end container*/}
       </section>
       {/*end section*/}
@@ -459,7 +458,7 @@ const BlogDetail = () => {
               <div className="col-sm-6">
                 <div className="text-sm-start">
                   <p className="mb-0">
-                    © Landrick. Design with <i className="mdi mdi-heart text-danger" /> by{' '}
+                    © Landrick. Design with <i className="mdi mdi-heart text-danger" /> by
                     <a href="https://shreethemes.in/" target="_blank" className="text-reset">
                       Shreethemes
                     </a>

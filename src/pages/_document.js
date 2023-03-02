@@ -34,6 +34,9 @@ export default class MyDocument extends Document {
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossOrigin="anonymous"
           ></link>
+          <link rel="shortcut icon" href="asset/images/favicon.ico" />
+          <link href="asset/css/simplebar.css" rel="stylesheet" type="text/css" />
+          <link href="asset/css/tabler-icons.min.css" rel="stylesheet" type="text/css" />
         </Head>
         <body style={{ fontFamily: 'Nunito !important' }}>
           <Main />
@@ -50,8 +53,6 @@ export default class MyDocument extends Document {
           <script src="/asset/js/switcher.js"></script>
 
           <script src="/asset/js/plugins.init.js"></script>
-
-          {/* <script src="/asset/js/app.js"></script> */}
           <script src="https://apis.google.com/js/platform.js" async defer></script>
           <script
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -68,6 +69,9 @@ export default class MyDocument extends Document {
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossOrigin="anonymous"
           ></script>
+          <script src="asset/js/bootstrap.bundle.min.js"></script>
+          <script src="asset/js/simplebar.min.js"></script>
+          <script src="asset/js/app.js"></script>
         </body>
       </Html>
     );
