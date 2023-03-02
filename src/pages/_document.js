@@ -1,9 +1,5 @@
-/* eslint-disable @next/next/google-font-display */
-/* eslint-disable @next/next/no-sync-scripts */
-/* eslint-disable @next/next/no-css-tags */
-/* eslint-disable @next/next/no-title-in-document-head */
 import React from 'react';
-import Document, { Html, Head, Main, NextScript, DocumentInitialProps, DocumentContext } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   render() {
@@ -69,9 +65,6 @@ export default class MyDocument extends Document {
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossOrigin="anonymous"
           ></script>
-          <script src="asset/js/bootstrap.bundle.min.js"></script>
-          <script src="asset/js/simplebar.min.js"></script>
-          <script src="asset/js/app.js"></script>
         </body>
       </Html>
     );
