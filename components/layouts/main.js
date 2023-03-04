@@ -12,7 +12,7 @@ function MainLayout({ children }) {
           </a>
           <div className="menu-extras">
             <div className="menu-item">
-              <a className="navbar-toggle" id="isToggle" onclick={e => toggleMenu(e)}>
+              <a className="navbar-toggle" id="isToggle" onClick={e => toggleMenu(e)}>
                 <div className="lines">
                   <span />
                   <span />
@@ -39,11 +39,11 @@ function MainLayout({ children }) {
                 </a>
               </li>
               <li className="has-submenu parent-parent-menu-item">
-                <a href="javascript:void(0)">Pages</a>
+                <a href="">Pages</a>
                 <span className="menu-arrow" />
                 <ul className="submenu">
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Company </a>
+                    <a href=""> Company </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -79,7 +79,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Account </a>
+                    <a href=""> Account </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -125,7 +125,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Email Template</a>
+                    <a href=""> Email Template</a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -151,7 +151,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Blog </a>
+                    <a href=""> Blog </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -187,7 +187,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Case Study </a>
+                    <a href=""> Case Study </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -208,11 +208,11 @@ function MainLayout({ children }) {
                     </a>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Auth Pages </a>
+                    <a href=""> Auth Pages </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li className="has-submenu parent-menu-item">
-                        <a href="javascript:void(0)"> Login </a>
+                        <a href=""> Login </a>
                         <span className="submenu-arrow" />
                         <ul className="submenu">
                           <li>
@@ -238,7 +238,7 @@ function MainLayout({ children }) {
                         </ul>
                       </li>
                       <li className="has-submenu parent-menu-item">
-                        <a href="javascript:void(0)"> Signup </a>
+                        <a href=""> Signup </a>
                         <span className="submenu-arrow" />
                         <ul className="submenu">
                           <li>
@@ -264,7 +264,7 @@ function MainLayout({ children }) {
                         </ul>
                       </li>
                       <li className="has-submenu parent-menu-item">
-                        <a href="javascript:void(0)"> Reset password </a>
+                        <a href=""> Reset password </a>
                         <span className="submenu-arrow" />
                         <ul className="submenu">
                           <li>
@@ -292,7 +292,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Utility </a>
+                    <a href=""> Utility </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -308,7 +308,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Special</a>
+                    <a href=""> Special</a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -339,7 +339,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Contact </a>
+                    <a href=""> Contact </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -365,25 +365,25 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Multi Level Menu</a>
+                    <a href=""> Multi Level Menu</a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
-                        <a href="javascript:void(0)" className="sub-menu-item">
+                        <a href="" className="sub-menu-item">
                           Level 1.0
                         </a>
                       </li>
                       <li className="has-submenu parent-menu-item">
-                        <a href="javascript:void(0)"> Level 2.0 </a>
+                        <a href=""> Level 2.0 </a>
                         <span className="submenu-arrow" />
                         <ul className="submenu">
                           <li>
-                            <a href="javascript:void(0)" className="sub-menu-item">
+                            <a href="" className="sub-menu-item">
                               Level 2.1
                             </a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)" className="sub-menu-item">
+                            <a href="" className="sub-menu-item">
                               Level 2.2
                             </a>
                           </li>
@@ -399,11 +399,11 @@ function MainLayout({ children }) {
                 </ul>
               </li>
               <li className="has-submenu parent-parent-menu-item">
-                <a href="javascript:void(0)">Pages</a>
+                <a href="">Pages</a>
                 <span className="menu-arrow" />
                 <ul className="submenu">
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Company </a>
+                    <a href=""> Company </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -439,7 +439,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Account </a>
+                    <a href=""> Account </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -485,7 +485,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Email Template</a>
+                    <a href=""> Email Template</a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -511,7 +511,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Blog </a>
+                    <a href=""> Blog </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -547,7 +547,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Case Study </a>
+                    <a href=""> Case Study </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -568,11 +568,11 @@ function MainLayout({ children }) {
                     </a>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Auth Pages </a>
+                    <a href=""> Auth Pages </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li className="has-submenu parent-menu-item">
-                        <a href="javascript:void(0)"> Login </a>
+                        <a href=""> Login </a>
                         <span className="submenu-arrow" />
                         <ul className="submenu">
                           <li>
@@ -598,7 +598,7 @@ function MainLayout({ children }) {
                         </ul>
                       </li>
                       <li className="has-submenu parent-menu-item">
-                        <a href="javascript:void(0)"> Signup </a>
+                        <a href=""> Signup </a>
                         <span className="submenu-arrow" />
                         <ul className="submenu">
                           <li>
@@ -624,7 +624,7 @@ function MainLayout({ children }) {
                         </ul>
                       </li>
                       <li className="has-submenu parent-menu-item">
-                        <a href="javascript:void(0)"> Reset password </a>
+                        <a href=""> Reset password </a>
                         <span className="submenu-arrow" />
                         <ul className="submenu">
                           <li>
@@ -652,7 +652,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Utility </a>
+                    <a href=""> Utility </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -668,7 +668,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Special</a>
+                    <a href=""> Special</a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -699,7 +699,7 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Contact </a>
+                    <a href=""> Contact </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
@@ -725,25 +725,25 @@ function MainLayout({ children }) {
                     </ul>
                   </li>
                   <li className="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)"> Multi Level Menu</a>
+                    <a href=""> Multi Level Menu</a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
                       <li>
-                        <a href="javascript:void(0)" className="sub-menu-item">
+                        <a href="" className="sub-menu-item">
                           Level 1.0
                         </a>
                       </li>
                       <li className="has-submenu parent-menu-item">
-                        <a href="javascript:void(0)"> Level 2.0 </a>
+                        <a href=""> Level 2.0 </a>
                         <span className="submenu-arrow" />
                         <ul className="submenu">
                           <li>
-                            <a href="javascript:void(0)" className="sub-menu-item">
+                            <a href="" className="sub-menu-item">
                               Level 2.1
                             </a>
                           </li>
                           <li>
-                            <a href="javascript:void(0)" className="sub-menu-item">
+                            <a href="" className="sub-menu-item">
                               Level 2.2
                             </a>
                           </li>
@@ -759,7 +759,7 @@ function MainLayout({ children }) {
                 </ul>
               </li>
               <li className="has-submenu parent-menu-item">
-                <a href="javascript:void(0)">Docs</a>
+                <a href="">Docs</a>
                 <span className="menu-arrow" />
                 <ul className="submenu">
                   <li>
@@ -785,7 +785,7 @@ function MainLayout({ children }) {
                 </ul>
               </li>
               <li className="has-submenu parent-parent-menu-item">
-                <a href="javascript:void(0)">Demos</a>
+                <a href="">Demos</a>
                 <span className="menu-arrow" />
                 <ul className="submenu megamenu">
                   <li>
@@ -897,7 +897,7 @@ function MainLayout({ children }) {
                         </a>
                       </li>
                       <li>
-                        <a href="javascript:void(0)" className="sub-menu-item">
+                        <a href="" className="sub-menu-item">
                           <div className="text-lg-center">
                             <span className="d-none d-lg-block">
                               <img src="asset/images/demos/comingsoon.png" className="img-fluid rounded shadow-md" alt="" />

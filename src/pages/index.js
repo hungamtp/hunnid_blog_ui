@@ -4,6 +4,8 @@ import { useQuery } from 'react-query';
 import { URL } from 'constraints/env';
 import axios from 'axios';
 import qs from 'qs';
+import Post from 'components/common/post';
+import { useState } from 'react';
 
 async function fetchTodos(params) {
   const queryKey = qs.stringify(params['queryKey'][0]);
@@ -11,8 +13,10 @@ async function fetchTodos(params) {
   return response.data;
 }
 function Home() {
-  const { data, isLoading, error } = useQuery([{ page: 0, size: 10, languageId: '26519154-b139-11ed-9976-588fc631a4a5' }], fetchTodos);
-
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(9);
+  const [languageId, setLanguageId] = useState('26519154-b139-11ed-9976-588fc631a4a5');
+  const { data, isLoading, error } = useQuery([{ page: page, size: size, languageId: languageId }], fetchTodos);
   return (
     <>
       <div>
@@ -26,6 +30,9 @@ function Home() {
         <section className="section">
           <div className="container">
             <div className="row">
+              {/* {data.data.map(post => {
+                <Post />;
+              })} */}
               <div className="col-lg-4 col-md-6 mb-4 pb-2">
                 <div className="card blog rounded border-0 shadow overflow-hidden">
                   <div className="position-relative">
@@ -41,13 +48,13 @@ function Home() {
                     <div className="post-meta d-flex justify-content-between mt-3">
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item me-2 mb-0">
-                          <a href="javascript:void(0)" className="text-muted like">
+                          <a href="" className="text-muted like">
                             <i className="uil uil-heart me-1" />
                             33
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="text-muted comments">
+                          <a href="" className="text-muted comments">
                             <i className="uil uil-comment me-1" />
                             08
                           </a>
@@ -77,20 +84,20 @@ function Home() {
                   </div>
                   <div className="card-body content">
                     <h5>
-                      <a href="javascript:void(0)" className="card-title title text-dark">
+                      <a href="" className="card-title title text-dark">
                         How apps is changing the IT world
                       </a>
                     </h5>
                     <div className="post-meta d-flex justify-content-between mt-3">
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item me-2 mb-0">
-                          <a href="javascript:void(0)" className="text-muted like">
+                          <a href="" className="text-muted like">
                             <i className="uil uil-heart me-1" />
                             33
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="text-muted comments">
+                          <a href="" className="text-muted comments">
                             <i className="uil uil-comment me-1" />
                             08
                           </a>
@@ -120,20 +127,20 @@ function Home() {
                   </div>
                   <div className="card-body content">
                     <h5>
-                      <a href="javascript:void(0)" className="card-title title text-dark">
+                      <a href="" className="card-title title text-dark">
                         Smartest Applications for Business
                       </a>
                     </h5>
                     <div className="post-meta d-flex justify-content-between mt-3">
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item me-2 mb-0">
-                          <a href="javascript:void(0)" className="text-muted like">
+                          <a href="" className="text-muted like">
                             <i className="uil uil-heart me-1" />
                             33
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="text-muted comments">
+                          <a href="" className="text-muted comments">
                             <i className="uil uil-comment me-1" />
                             08
                           </a>
@@ -163,20 +170,20 @@ function Home() {
                   </div>
                   <div className="card-body content">
                     <h5>
-                      <a href="javascript:void(0)" className="card-title title text-dark">
+                      <a href="" className="card-title title text-dark">
                         How apps is changing the IT world
                       </a>
                     </h5>
                     <div className="post-meta d-flex justify-content-between mt-3">
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item me-2 mb-0">
-                          <a href="javascript:void(0)" className="text-muted like">
+                          <a href="" className="text-muted like">
                             <i className="uil uil-heart me-1" />
                             33
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="text-muted comments">
+                          <a href="" className="text-muted comments">
                             <i className="uil uil-comment me-1" />
                             08
                           </a>
@@ -206,20 +213,20 @@ function Home() {
                   </div>
                   <div className="card-body content">
                     <h5>
-                      <a href="javascript:void(0)" className="card-title title text-dark">
+                      <a href="" className="card-title title text-dark">
                         Design your apps in your own way
                       </a>
                     </h5>
                     <div className="post-meta d-flex justify-content-between mt-3">
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item me-2 mb-0">
-                          <a href="javascript:void(0)" className="text-muted like">
+                          <a href="" className="text-muted like">
                             <i className="uil uil-heart me-1" />
                             33
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="text-muted comments">
+                          <a href="" className="text-muted comments">
                             <i className="uil uil-comment me-1" />
                             08
                           </a>
@@ -249,20 +256,20 @@ function Home() {
                   </div>
                   <div className="card-body content">
                     <h5>
-                      <a href="javascript:void(0)" className="card-title title text-dark">
+                      <a href="" className="card-title title text-dark">
                         Smartest Applications for Business
                       </a>
                     </h5>
                     <div className="post-meta d-flex justify-content-between mt-3">
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item me-2 mb-0">
-                          <a href="javascript:void(0)" className="text-muted like">
+                          <a href="" className="text-muted like">
                             <i className="uil uil-heart me-1" />
                             33
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="text-muted comments">
+                          <a href="" className="text-muted comments">
                             <i className="uil uil-comment me-1" />
                             08
                           </a>
@@ -292,20 +299,20 @@ function Home() {
                   </div>
                   <div className="card-body content">
                     <h5>
-                      <a href="javascript:void(0)" className="card-title title text-dark">
-                        Design your apps in your own way
+                      <a href="" className="card-title title text-dark">
+                        Make your apps in your own way
                       </a>
                     </h5>
                     <div className="post-meta d-flex justify-content-between mt-3">
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item me-2 mb-0">
-                          <a href="javascript:void(0)" className="text-muted like">
+                          <a href="" className="text-muted like">
                             <i className="uil uil-heart me-1" />
                             33
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="text-muted comments">
+                          <a href="" className="text-muted comments">
                             <i className="uil uil-comment me-1" />
                             08
                           </a>
@@ -335,20 +342,20 @@ function Home() {
                   </div>
                   <div className="card-body content">
                     <h5>
-                      <a href="javascript:void(0)" className="card-title title text-dark">
+                      <a href="" className="card-title title text-dark">
                         Smartest Applications for Business
                       </a>
                     </h5>
                     <div className="post-meta d-flex justify-content-between mt-3">
                       <ul className="list-unstyled mb-0">
                         <li className="list-inline-item me-2 mb-0">
-                          <a href="javascript:void(0)" className="text-muted like">
+                          <a href="" className="text-muted like">
                             <i className="uil uil-heart me-1" />
                             33
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="text-muted comments">
+                          <a href="" className="text-muted comments">
                             <i className="uil uil-comment me-1" />
                             08
                           </a>
@@ -374,27 +381,27 @@ function Home() {
               <div className="col-12">
                 <ul className="pagination justify-content-center mb-0">
                   <li className="page-item">
-                    <a className="page-link" href="javascript:void(0)" aria-label="Previous">
+                    <a className="page-link" href="" aria-label="Previous">
                       Prev
                     </a>
                   </li>
                   <li className="page-item active">
-                    <a className="page-link" href="javascript:void(0)">
+                    <a className="page-link" href="">
                       1
                     </a>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="javascript:void(0)">
+                    <a className="page-link" href="">
                       2
                     </a>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="javascript:void(0)">
+                    <a className="page-link" href="">
                       3
                     </a>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="javascript:void(0)" aria-label="Next">
+                    <a className="page-link" href="" aria-label="Next">
                       Next
                     </a>
                   </li>
@@ -417,22 +424,22 @@ function Home() {
                       <p className="mt-4">Go hard or go home</p>
                       <ul className="list-unstyled social-icon foot-social-icon mb-0 mt-4">
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="rounded">
+                          <a href="" className="rounded">
                             <i data-feather="facebook" className="fea icon-sm fea-social" />
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="rounded">
+                          <a href="" className="rounded">
                             <i data-feather="instagram" className="fea icon-sm fea-social" />
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="rounded">
+                          <a href="" className="rounded">
                             <i data-feather="twitter" className="fea icon-sm fea-social" />
                           </a>
                         </li>
                         <li className="list-inline-item">
-                          <a href="javascript:void(0)" className="rounded">
+                          <a href="" className="rounded">
                             <i data-feather="linkedin" className="fea icon-sm fea-social" />
                           </a>
                         </li>
@@ -444,42 +451,42 @@ function Home() {
                       <h5 className="footer-head">Company</h5>
                       <ul className="list-unstyled footer-list mt-4">
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> About us
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Services
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Team
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Pricing
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Project
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Careers
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Blog
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Login
                           </a>
                         </li>
@@ -490,27 +497,27 @@ function Home() {
                       <h5 className="footer-head">Usefull Links</h5>
                       <ul className="list-unstyled footer-list mt-4">
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Terms of Services
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Privacy Policy
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Documentation
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Changelog
                           </a>
                         </li>
                         <li>
-                          <a href="javascript:void(0)" className="text-foot">
+                          <a href="" className="text-foot">
                             <i className="uil uil-angle-right-b me-1" /> Components
                           </a>
                         </li>
@@ -572,27 +579,27 @@ function Home() {
                 <div className="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                   <ul className="list-unstyled text-sm-end mb-0">
                     <li className="list-inline-item">
-                      <a href="javascript:void(0)">
+                      <a href="">
                         <img src="asset/images/payments/american-ex.png" className="avatar avatar-ex-sm" title="American Express" alt="" />
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="javascript:void(0)">
+                      <a href="">
                         <img src="asset/images/payments/discover.png" className="avatar avatar-ex-sm" title="Discover" alt="" />
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="javascript:void(0)">
+                      <a href="">
                         <img src="asset/images/payments/master-card.png" className="avatar avatar-ex-sm" title="Master Card" alt="" />
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="javascript:void(0)">
+                      <a href="">
                         <img src="asset/images/payments/paypal.png" className="avatar avatar-ex-sm" title="Paypal" alt="" />
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="javascript:void(0)">
+                      <a href="">
                         <img src="asset/images/payments/visa.png" className="avatar avatar-ex-sm" title="Visa" alt="" />
                       </a>
                     </li>

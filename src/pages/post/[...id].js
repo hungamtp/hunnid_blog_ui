@@ -39,22 +39,22 @@ const BlogDetail = () => {
                   <ul className="list-unstyled text-center sticky-bar social-icon mb-0">
                     <li className="mb-3 h6">Share</li>
                     <li>
-                      <a href="javascript:void(0)" className="rounded">
+                      <a href="" className="rounded">
                         <i data-feather="facebook" className="fea icon-sm fea-social" />
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0)" className="rounded">
+                      <a href="" className="rounded">
                         <i data-feather="instagram" className="fea icon-sm fea-social" />
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0)" className="rounded">
+                      <a href="" className="rounded">
                         <i data-feather="twitter" className="fea icon-sm fea-social" />
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0)" className="rounded">
+                      <a href="" className="rounded">
                         <i data-feather="linkedin" className="fea icon-sm fea-social" />
                       </a>
                     </li>
@@ -69,7 +69,7 @@ const BlogDetail = () => {
                   </p>
                   <ul className="list-unstyled d-flex justify-content-between mt-4">
                     <li className="list-inline-item user me-2">
-                      <a href="javascript:void(0)" className="text-muted">
+                      <a href="" className="text-muted">
                         <i className="uil uil-user text-dark" /> Calvin Carlo
                       </a>
                     </li>
