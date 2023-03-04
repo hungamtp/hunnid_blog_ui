@@ -1,6 +1,18 @@
 import MainLayout from 'components/layouts/main';
 import Link from 'next/link';
+import { useQuery } from 'react-query';
+import { URL } from 'constraints/env';
+import axios from 'axios';
+import qs from 'qs';
+
+async function fetchTodos(params) {
+  const queryKey = qs.stringify(params['queryKey'][0]);
+  const response = await axios.get(`${URL}posts?${queryKey}`);
+  return response.data;
+}
 function Home() {
+  const { data, isLoading, error } = useQuery([{ page: 0, size: 10, languageId: '26519154-b139-11ed-9976-588fc631a4a5' }], fetchTodos);
+
   return (
     <>
       <div>
@@ -41,7 +53,7 @@ function Home() {
                           </a>
                         </li>
                       </ul>
-                      <a href="blog-detail.html" className="text-muted readmore">
+                      <a href="blog-detail.html" className="text-muted readmore animate-waving-hand">
                         Read More <i className="uil uil-angle-right-b align-middle" />
                       </a>
                     </div>
@@ -607,7 +619,8 @@ function Home() {
                 <img src="asset/images/contact.svg" className="img-fluid d-block mx-auto" style={{ maxWidth: '256px' }} alt="" />
                 <div className="card border-0 mt-5" style={{ zIndex: 1 }}>
                   <div className="card-body p-0">
-                    <form method="post" name="myForm" onsubmit="return validateForm()">
+                    {/* <form method="post" name="myForm" onsubmit="return validateForm()"> */}
+                    <form method="post" name="myForm">
                       <p id="error-msg" className="mb-0" />
                       <div id="simple-msg" />
                       <div className="row">
