@@ -8,10 +8,65 @@ const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
   const [languageId, setLanguageId] = useState('26519154-b139-11ed-9976-588fc631a4a5');
-  const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
+  const onChangePage = (e, i) => {
+    e.preventDefault();
+    if (i < totalPages - 1 && i >= 0) {
+      setPage(i);
+    }
+  };
+
+  const onNextPage = () => {
+    if (page < totalPages - 1) {
+      setPage(page + 1);
+    }
+  };
+
+  const onPreviousPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
 
   const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, languageId: languageId });
+  console.log(data);
+  const renderPagination = () => {
+    if (!isLoading) {
+      if (data.totalPages > 10) {
+        var maxPage = data.totalPages - page > 5 ? page + 5 : page + (10 - (data.totalPages - page));
+        for (var i = data.totalPages - page > 5 ? page - 5 : page - (10 - (data.totalPages - page)); i < maxPage; i++) {
+          return (
+            <>
+              <li aria-current="page">
+                <a
+                  class="relative block rounded bg-transparent py-1.5 px-3 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100  dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                  href="#!"
+                >
+                  {i + 1}
+                </a>
+              </li>
+            </>
+          );
+        }
+      } else {
+        for (var i = 0; i < data.totalPages; i++) {
+          return (
+            <>
+              <li>
+                <a
+                  class="relative block rounded bg-transparent py-1.5 px-3 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100  dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                  href="#!"
+                >
+                  {i + 1}
+                </a>
+              </li>
+            </>
+          );
+        }
+      }
+    }
+  };
+
   return (
     <>
       <div>
@@ -26,39 +81,32 @@ const Home = () => {
           <div className="container">
             <div className="row">
               {data &&
-                data.map(post => {
-                  return <Post post={post} key={post.id} />;
+                data.data.map(post => {
+                  return <Post post={post} key={post.id} isLoading={isLoading} />;
                 })}
 
               {/* PAGINATION START */}
               <div className="col-12">
-                <ul className="pagination justify-content-center mb-0">
-                  <li className="page-item">
-                    <a className="page-link" href="" aria-label="Previous">
-                      Prev
-                    </a>
-                  </li>
-                  <li className="page-item active">
-                    <a className="page-link" href="">
-                      1
-                    </a>
-                  </li>
-                  <li className="page-item" onClick={e => setPage(2)}>
-                    <a className="page-link" href="">
-                      2
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="">
-                      3
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="" aria-label="Next">
-                      Next
-                    </a>
-                  </li>
-                </ul>
+                <div class="flex justify-center">
+                  <nav aria-label="Page navigation example">
+                    <ul class="list-style-none flex">
+                      <li>
+                        <a class="pointer-events-none relative block rounded bg-transparent py-1.5 px-3 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">
+                          Previous
+                        </a>
+                      </li>
+                      {renderPagination()}
+                      <li>
+                        <a
+                          class="relative block rounded bg-transparent py-1.5 px-3 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                          href="#!"
+                        >
+                          Next
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
@@ -179,7 +227,7 @@ const Home = () => {
 
                     <div className="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                       <h5 className="footer-head">Newsletter</h5>
-                      <p className="mt-4">Sign up and receive the latest tips via email.</p>
+                      <p className="mt-4">Sign up and receive the latest blogs via email.</p>
                       <form>
                         <div className="row">
                           <div className="col-lg-12">
@@ -228,8 +276,8 @@ const Home = () => {
                     <p className="mb-0">This is a message;</p>
                   </div>
                 </div>
-
-                <div className="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                //payment
+                {/* <div className="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                   <ul className="list-unstyled text-sm-end mb-0">
                     <li className="list-inline-item">
                       <a href="">
@@ -257,7 +305,7 @@ const Home = () => {
                       </a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

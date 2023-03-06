@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-const Post = ({ post }) => {
+const Post = ({ post, isLoading }) => {
   return (
     <div className="col-lg-4 col-md-6 mb-4 pb-2">
       <div className="card blog rounded border-0 shadow overflow-hidden">

@@ -20,5 +20,5 @@ async function fetchPosts(params) {
   const queryKey = qs.stringify(params);
   const { data } = await axios.get(`${URL}posts?${queryKey}`);
 
-  return data.data;
+  return data;
 }
