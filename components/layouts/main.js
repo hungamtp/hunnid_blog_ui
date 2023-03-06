@@ -1,7 +1,4 @@
 function MainLayout({ children }) {
-  const handleChangeTheme = () => {
-    console.log('change theme');
-  };
   return (
     <>
       <header id="topnav" className="defaultscroll sticky bg-white">

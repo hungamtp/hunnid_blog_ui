@@ -1,22 +1,17 @@
 import MainLayout from 'components/layouts/main';
 import Link from 'next/link';
-import { useQuery } from 'react-query';
-import { URL } from 'constraints/env';
-import axios from 'axios';
-import qs from 'qs';
 import Post from 'components/common/post';
 import { useState } from 'react';
+import { useGetPosts } from 'services/getPost';
 
-async function fetchTodos(params) {
-  const queryKey = qs.stringify(params['queryKey'][0]);
-  const response = await axios.get(`${URL}posts?${queryKey}`);
-  return response.data;
-}
-function Home() {
+const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
   const [languageId, setLanguageId] = useState('26519154-b139-11ed-9976-588fc631a4a5');
-  const { data, isLoading, error } = useQuery([{ page: page, size: size, languageId: languageId }], fetchTodos);
+  const [posts, setPosts] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
+
+  const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, languageId: languageId });
   return (
     <>
       <div>
@@ -30,352 +25,10 @@ function Home() {
         <section className="section">
           <div className="container">
             <div className="row">
-              {/* {data.data.map(post => {
-                <Post />;
-              })} */}
-              <div className="col-lg-4 col-md-6 mb-4 pb-2">
-                <div className="card blog rounded border-0 shadow overflow-hidden">
-                  <div className="position-relative">
-                    <img src="asset/images/blog/01.jpg" className="card-img-top" alt="..." />
-                    <div className="overlay rounded-top" />
-                  </div>
-                  <div className="card-body content">
-                    <h5>
-                      <Link href="/post/acb" className="card-title title text-dark">
-                        Design your apps in your own way
-                      </Link>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <ul className="list-unstyled mb-0">
-                        <li className="list-inline-item me-2 mb-0">
-                          <a href="" className="text-muted like">
-                            <i className="uil uil-heart me-1" />
-                            33
-                          </a>
-                        </li>
-                        <li className="list-inline-item">
-                          <a href="" className="text-muted comments">
-                            <i className="uil uil-comment me-1" />
-                            08
-                          </a>
-                        </li>
-                      </ul>
-                      <a href="blog-detail.html" className="text-muted readmore animate-waving-hand">
-                        Read More <i className="uil uil-angle-right-b align-middle" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="author">
-                    <small className="text-light user d-block">
-                      <i className="uil uil-user" /> Calvin Carlo
-                    </small>
-                    <small className="text-light date">
-                      <i className="uil uil-calendar-alt" /> 25th June 2021
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 pb-2">
-                <div className="card blog rounded border-0 shadow overflow-hidden">
-                  <div className="position-relative">
-                    <img src="asset/images/blog/02.jpg" className="card-img-top" alt="..." />
-                    <div className="overlay rounded-top" />
-                  </div>
-                  <div className="card-body content">
-                    <h5>
-                      <a href="" className="card-title title text-dark">
-                        How apps is changing the IT world
-                      </a>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <ul className="list-unstyled mb-0">
-                        <li className="list-inline-item me-2 mb-0">
-                          <a href="" className="text-muted like">
-                            <i className="uil uil-heart me-1" />
-                            33
-                          </a>
-                        </li>
-                        <li className="list-inline-item">
-                          <a href="" className="text-muted comments">
-                            <i className="uil uil-comment me-1" />
-                            08
-                          </a>
-                        </li>
-                      </ul>
-                      <a href="blog-detail.html" className="text-muted readmore">
-                        Read More <i className="uil uil-angle-right-b align-middle" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="author">
-                    <small className="text-light user d-block">
-                      <i className="uil uil-user" /> Calvin Carlo
-                    </small>
-                    <small className="text-light date">
-                      <i className="uil uil-calendar-alt" /> 25th June 2021
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 pb-2">
-                <div className="card blog rounded border-0 shadow overflow-hidden">
-                  <div className="position-relative">
-                    <img src="asset/images/blog/03.jpg" className="card-img-top" alt="..." />
-                    <div className="overlay rounded-top" />
-                  </div>
-                  <div className="card-body content">
-                    <h5>
-                      <a href="" className="card-title title text-dark">
-                        Smartest Applications for Business
-                      </a>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <ul className="list-unstyled mb-0">
-                        <li className="list-inline-item me-2 mb-0">
-                          <a href="" className="text-muted like">
-                            <i className="uil uil-heart me-1" />
-                            33
-                          </a>
-                        </li>
-                        <li className="list-inline-item">
-                          <a href="" className="text-muted comments">
-                            <i className="uil uil-comment me-1" />
-                            08
-                          </a>
-                        </li>
-                      </ul>
-                      <a href="blog-detail.html" className="text-muted readmore">
-                        Read More <i className="uil uil-angle-right-b align-middle" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="author">
-                    <small className="text-light user d-block">
-                      <i className="uil uil-user" /> Calvin Carlo
-                    </small>
-                    <small className="text-light date">
-                      <i className="uil uil-calendar-alt" /> 25th June 2021
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 pb-2">
-                <div className="card blog rounded border-0 shadow overflow-hidden">
-                  <div className="position-relative">
-                    <img src="asset/images/blog/04.jpg" className="card-img-top" alt="..." />
-                    <div className="overlay rounded-top" />
-                  </div>
-                  <div className="card-body content">
-                    <h5>
-                      <a href="" className="card-title title text-dark">
-                        How apps is changing the IT world
-                      </a>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <ul className="list-unstyled mb-0">
-                        <li className="list-inline-item me-2 mb-0">
-                          <a href="" className="text-muted like">
-                            <i className="uil uil-heart me-1" />
-                            33
-                          </a>
-                        </li>
-                        <li className="list-inline-item">
-                          <a href="" className="text-muted comments">
-                            <i className="uil uil-comment me-1" />
-                            08
-                          </a>
-                        </li>
-                      </ul>
-                      <a href="blog-detail.html" className="text-muted readmore">
-                        Read More <i className="uil uil-angle-right-b align-middle" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="author">
-                    <small className="text-light user d-block">
-                      <i className="uil uil-user" /> Calvin Carlo
-                    </small>
-                    <small className="text-light date">
-                      <i className="uil uil-calendar-alt" /> 25th June 2021
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 pb-2">
-                <div className="card blog rounded border-0 shadow overflow-hidden">
-                  <div className="position-relative">
-                    <img src="asset/images/blog/05.jpg" className="card-img-top" alt="..." />
-                    <div className="overlay rounded-top" />
-                  </div>
-                  <div className="card-body content">
-                    <h5>
-                      <a href="" className="card-title title text-dark">
-                        Design your apps in your own way
-                      </a>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <ul className="list-unstyled mb-0">
-                        <li className="list-inline-item me-2 mb-0">
-                          <a href="" className="text-muted like">
-                            <i className="uil uil-heart me-1" />
-                            33
-                          </a>
-                        </li>
-                        <li className="list-inline-item">
-                          <a href="" className="text-muted comments">
-                            <i className="uil uil-comment me-1" />
-                            08
-                          </a>
-                        </li>
-                      </ul>
-                      <a href="blog-detail.html" className="text-muted readmore">
-                        Read More <i className="uil uil-angle-right-b align-middle" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="author">
-                    <small className="text-light user d-block">
-                      <i className="uil uil-user" /> Calvin Carlo
-                    </small>
-                    <small className="text-light date">
-                      <i className="uil uil-calendar-alt" /> 25th June 2021
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 pb-2">
-                <div className="card blog rounded border-0 shadow overflow-hidden">
-                  <div className="position-relative">
-                    <img src="asset/images/blog/06.jpg" className="card-img-top" alt="..." />
-                    <div className="overlay rounded-top" />
-                  </div>
-                  <div className="card-body content">
-                    <h5>
-                      <a href="" className="card-title title text-dark">
-                        Smartest Applications for Business
-                      </a>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <ul className="list-unstyled mb-0">
-                        <li className="list-inline-item me-2 mb-0">
-                          <a href="" className="text-muted like">
-                            <i className="uil uil-heart me-1" />
-                            33
-                          </a>
-                        </li>
-                        <li className="list-inline-item">
-                          <a href="" className="text-muted comments">
-                            <i className="uil uil-comment me-1" />
-                            08
-                          </a>
-                        </li>
-                      </ul>
-                      <a href="blog-detail.html" className="text-muted readmore">
-                        Read More <i className="uil uil-angle-right-b align-middle" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="author">
-                    <small className="text-light user d-block">
-                      <i className="uil uil-user" /> Calvin Carlo
-                    </small>
-                    <small className="text-light date">
-                      <i className="uil uil-calendar-alt" /> 25th June 2021
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 pb-2">
-                <div className="card blog rounded border-0 shadow overflow-hidden">
-                  <div className="position-relative">
-                    <img src="asset/images/blog/07.jpg" className="card-img-top" alt="..." />
-                    <div className="overlay rounded-top" />
-                  </div>
-                  <div className="card-body content">
-                    <h5>
-                      <a href="" className="card-title title text-dark">
-                        Make your apps in your own way
-                      </a>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <ul className="list-unstyled mb-0">
-                        <li className="list-inline-item me-2 mb-0">
-                          <a href="" className="text-muted like">
-                            <i className="uil uil-heart me-1" />
-                            33
-                          </a>
-                        </li>
-                        <li className="list-inline-item">
-                          <a href="" className="text-muted comments">
-                            <i className="uil uil-comment me-1" />
-                            08
-                          </a>
-                        </li>
-                      </ul>
-                      <a href="blog-detail.html" className="text-muted readmore">
-                        Read More <i className="uil uil-angle-right-b align-middle" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="author">
-                    <small className="text-light user d-block">
-                      <i className="uil uil-user" /> Calvin Carlo
-                    </small>
-                    <small className="text-light date">
-                      <i className="uil uil-calendar-alt" /> 25th June 2021
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 mb-4 pb-2">
-                <div className="card blog rounded border-0 shadow overflow-hidden">
-                  <div className="position-relative">
-                    <img src="asset/images/blog/08.jpg" className="card-img-top" alt="..." />
-                    <div className="overlay rounded-top" />
-                  </div>
-                  <div className="card-body content">
-                    <h5>
-                      <a href="" className="card-title title text-dark">
-                        Smartest Applications for Business
-                      </a>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <ul className="list-unstyled mb-0">
-                        <li className="list-inline-item me-2 mb-0">
-                          <a href="" className="text-muted like">
-                            <i className="uil uil-heart me-1" />
-                            33
-                          </a>
-                        </li>
-                        <li className="list-inline-item">
-                          <a href="" className="text-muted comments">
-                            <i className="uil uil-comment me-1" />
-                            08
-                          </a>
-                        </li>
-                      </ul>
-                      <a href="blog-detail.html" className="text-muted readmore">
-                        Read More <i className="uil uil-angle-right-b align-middle" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="author">
-                    <small className="text-light user d-block">
-                      <i className="uil uil-user" /> Calvin Carlo
-                    </small>
-                    <small className="text-light date">
-                      <i className="uil uil-calendar-alt" /> 25th June 2021
-                    </small>
-                  </div>
-                </div>
-              </div>
+              {data &&
+                data.map(post => {
+                  return <Post post={post} key={post.id} />;
+                })}
 
               {/* PAGINATION START */}
               <div className="col-12">
@@ -390,7 +43,7 @@ function Home() {
                       1
                     </a>
                   </li>
-                  <li className="page-item">
+                  <li className="page-item" onClick={e => setPage(2)}>
                     <a className="page-link" href="">
                       2
                     </a>
@@ -698,51 +351,11 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="offcanvas-footer p-4 border-top text-center">
-            <ul className="list-unstyled social-icon social mb-0">
-              <li className="list-inline-item mb-0">
-                <a href="https://1.envato.market/4n73n" target="_blank" className="rounded">
-                  <i className="uil uil-shopping-cart align-middle" title="Buy Now" />
-                </a>
-              </li>
-              <li className="list-inline-item mb-0">
-                <a href="https://dribbble.com/shreethemes" target="_blank" className="rounded">
-                  <i className="uil uil-dribbble align-middle" title="dribbble" />
-                </a>
-              </li>
-              <li className="list-inline-item mb-0">
-                <a href="https://www.facebook.com/shreethemes" target="_blank" className="rounded">
-                  <i className="uil uil-facebook-f align-middle" title="facebook" />
-                </a>
-              </li>
-              <li className="list-inline-item mb-0">
-                <a href="https://www.instagram.com/shreethemes/" target="_blank" className="rounded">
-                  <i className="uil uil-instagram align-middle" title="instagram" />
-                </a>
-              </li>
-              <li className="list-inline-item mb-0">
-                <a href="https://twitter.com/shreethemes" target="_blank" className="rounded">
-                  <i className="uil uil-twitter align-middle" title="twitter" />
-                </a>
-              </li>
-              <li className="list-inline-item mb-0">
-                <a href="mailto:support@shreethemes.in" className="rounded">
-                  <i className="uil uil-envelope align-middle" title="email" />
-                </a>
-              </li>
-              <li className="list-inline-item mb-0">
-                <a href="https://shreethemes.in" target="_blank" className="rounded">
-                  <i className="uil uil-globe align-middle" title="website" />
-                </a>
-              </li>
-            </ul>
-            {/*end icon*/}
-          </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 Home.Layout = MainLayout;
 export default Home;
