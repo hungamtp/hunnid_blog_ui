@@ -1,12 +1,13 @@
+import Image from 'next/image';
+import Link from 'next/link';
 function MainLayout({ children }) {
   return (
     <>
       <header id="topnav" className="defaultscroll sticky bg-white">
         <div className="container">
-          <a className="logo" href="index.html">
-            <img src="/asset/images/logo-dark.png" height={24} className="logo-light-mode" alt="" />
-            <img src="/asset/images/logo-light.png" height={24} className="logo-dark-mode" alt="" />
-          </a>
+          <Link className="logo" href="/">
+            <Image src="/asset/images/logo-dark.png" height={30} width={200} className="logo-light-mode" alt="" />
+          </Link>
           <div className="menu-extras">
             <div className="menu-item">
               <a className="navbar-toggle" id="isToggle" onClick={e => toggleMenu(e)}>
@@ -19,9 +20,15 @@ function MainLayout({ children }) {
             </div>
           </div>
           <ul className="buy-button list-inline mb-0">
-            <li className="list-inline-item ps-1 mb-0">
-              <div className="btn btn-icon btn-pills btn-primary">VN</div>
-            </li>
+            <div className="list-inline-item ps-1 mb-0 ">
+              <li>
+                <div className="btn btn-icon btn-pills btn-danger">VN</div>
+              </li>
+              <li className="hidden">
+                <div className="btn btn-icon btn-pills btn-primary">EN</div>
+              </li>
+            </div>
+
             <li className="list-inline-item mb-0">
               <div className="btn btn-icon btn-pills ">
                 <img className="animate-waving-hand" src="/asset/icon/sun.png" />
