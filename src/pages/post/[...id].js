@@ -4,7 +4,7 @@ const BlogDetail = () => {
   const router = useRouter;
   return (
     <div>
-      <section className="bg-half-170 d-table w-100" style={{ background: 'url("/asset/images/1.jpg") center center' }}>
+      <section className="bg-half-170 d-table w-100" style={{ background: 'url("/asset/images/blog/01.jpg") center center' }}>
         <div className="bg-overlay" />
         <div className="container">
           <div className="row mt-5 justify-content-center">

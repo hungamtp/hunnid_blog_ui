@@ -6,41 +6,30 @@ function MainLayout({ children }) {
       <header id="topnav" className="defaultscroll sticky bg-white">
         <div className="container">
           <Link className="logo" href="/">
-            <Image src="/asset/images/logo-dark.png" height={30} width={200} className="logo-light-mode" alt="" />
+            <Image src="/asset/icon/temp-icon.png" height={30} width={30} className="logo-light-mode" alt="" />
           </Link>
-          <div className="menu-extras">
-            <div className="menu-item">
-              <a className="navbar-toggle" id="isToggle" onClick={e => toggleMenu(e)}>
-                <div className="lines">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </a>
-            </div>
-          </div>
           <ul className="buy-button list-inline mb-0">
             <div className="list-inline-item ps-1 mb-0 ">
               <li>
-                <div className="btn btn-icon btn-pills btn-danger">VN</div>
+                <div className="btn btn-icon btn-pills btn-light">VN</div>
               </li>
               <li className="hidden">
-                <div className="btn btn-icon btn-pills btn-primary">EN</div>
+                <div className="btn btn-icon btn-pills btn-dark">EN</div>
               </li>
             </div>
 
-            <li className="list-inline-item mb-0">
+            {/* <li className="list-inline-item mb-0">
               <div className="btn btn-icon btn-pills ">
                 <img className="animate-waving-hand" src="/asset/icon/sun.png" />
               </div>
-            </li>
+            </li> */}
           </ul>
           <div id="navigation">
             <ul className="navigation-menu">
               <li>
-                <a href="index.html" className="sub-menu-item">
+                <Link href="/" className="sub-menu-item">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="has-submenu parent-parent-menu-item">
                 <a href="">Pages</a>
