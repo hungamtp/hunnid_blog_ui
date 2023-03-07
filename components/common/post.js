@@ -16,16 +16,10 @@ const Post = ({ post, isLoading }) => {
           </h5>
           <div className="post-meta d-flex justify-content-between mt-3">
             <ul className="list-unstyled mb-0">
-              <li className="list-inline-item me-2 mb-0">
-                <a href="" className="text-muted like">
-                  <i className="uil uil-heart me-1" />
-                  {post.viewCount}
-                </a>
-              </li>
               <li className="list-inline-item">
                 <a href="" className="text-muted eye">
                   <i className="uil uil-eye me-1" />
-                  {post.viewCount}
+                  {post.content}
                 </a>
               </li>
             </ul>
@@ -37,6 +31,9 @@ const Post = ({ post, isLoading }) => {
         <div className="author">
           <small className="text-light eye d-block">
             <i className="uil uil-eye" /> {post.viewCount}
+          </small>
+          <small className="text-light user d-block">
+            <i className="uil uil-user" /> hungnb_
           </small>
           <small className="text-light date">
             <i className="uil uil-calendar-alt" /> {post.createdDate.toString().split('T')[0]}
