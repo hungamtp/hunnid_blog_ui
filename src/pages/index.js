@@ -10,7 +10,6 @@ const Home = () => {
   const [languageId, setLanguageId] = useState('26519154-b139-11ed-9976-588fc631a4a5');
 
   const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, languageId: languageId });
-
   const handleChangePage = (event, value) => {
     setPage(value);
   };

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import { Chip } from '@mui/material';
 const Post = ({ post, isLoading }) => {
   return (
     <Link href={`/post/${post.id}`} className="col-lg-4 col-md-6 mb-4 pb-2">
@@ -15,9 +16,8 @@ const Post = ({ post, isLoading }) => {
           </h5>
 
           <div className="flex justify-end">
-            <Link href={`post/${post.id}`} className="under-line">
-              Read More <i className="uil uil-angle-right-b align-middle" />
-            </Link>
+            <Chip label="tech" color="success" variant="outlined" size="small" />
+            <Chip label="latest" color="success" variant="outlined" size="small" />
           </div>
         </div>
         <div className="author">

@@ -4,7 +4,7 @@ import axios from 'axios';
 import qs from 'qs';
 
 export function useGetPosts({ page, size, languageId }) {
-  const { data, ...rest } = useQuery('getPost', async () => {
+  const { data, ...rest } = useQuery(['getPost', [page, size, languageId]], async () => {
     const data = await fetchPosts({ page: page, size: size, languageId: languageId });
 
     return data;
