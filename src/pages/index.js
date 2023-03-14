@@ -33,17 +33,15 @@ const Home = () => {
                 })}
 
               {/* PAGINATION START */}
-              <div className="col-12">
-                <div class="flex justify-center">
-                  <Pagination
-                    count={data && data.totalPages}
-                    isFetching={isFetching}
-                    size="small"
-                    hidePrevButton
-                    hideNextButton
-                    onChange={handleChangePage}
-                  />
-                </div>
+              <div className="col-12" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                <Pagination
+                  count={data && data.totalPages}
+                  isFetching={isFetching}
+                  size="small"
+                  hidePrevButton
+                  hideNextButton
+                  onChange={handleChangePage}
+                />
               </div>
             </div>
           </div>
