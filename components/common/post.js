@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Chip } from '@mui/material';
-const Post = ({ post, isLoading }) => {
+const Post = ({ post, isLoading, isFetching }) => {
   return (
     <Link href={`/post/${post.id}`} className="col-lg-4 col-md-6 mb-4 pb-2">
       <div className="card blog rounded border-0 shadow overflow-hidden">

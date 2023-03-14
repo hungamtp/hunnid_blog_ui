@@ -12,6 +12,7 @@ const Home = () => {
   const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, languageId: languageId });
   const handleChangePage = (event, value) => {
     setPage(value);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
     <>
@@ -34,7 +35,14 @@ const Home = () => {
               {/* PAGINATION START */}
               <div className="col-12">
                 <div class="flex justify-center">
-                  <Pagination count={data && data.totalPages} size="small" hidePrevButton hideNextButton onChange={handleChangePage} />
+                  <Pagination
+                    count={data && data.totalPages}
+                    isFetching={isFetching}
+                    size="small"
+                    hidePrevButton
+                    hideNextButton
+                    onChange={handleChangePage}
+                  />
                 </div>
               </div>
             </div>
