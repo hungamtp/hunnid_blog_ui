@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Footer from 'components/common/Footer';
 function MainLayout({ children }) {
   return (
     <>
@@ -776,96 +777,7 @@ function MainLayout({ children }) {
         </div>
       </header>
       <div>{children}</div>
-
-      <div className="offcanvas offcanvas-end bg-white shadow" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div className="offcanvas-header p-4 border-bottom">
-          <h5 id="offcanvasRightLabel" className="mb-0">
-            {/* <img src="asset/images/logo-dark.png" height={24} className="light-version" alt="" />
-            <img src="asset/images/logo-light.png" height={24} className="dark-version" alt="" /> */}
-          </h5>
-          <button type="button" className="btn-close d-flex align-items-center text-dark" data-bs-dismiss="offcanvas" aria-label="Close">
-            <i className="uil uil-times fs-4" />
-          </button>
-        </div>
-        <div className="offcanvas-body p-4">
-          <div className="row">
-            <div className="col-12">
-              {/* <img src="asset/images/contact.svg" className="img-fluid d-block mx-auto" style={{ maxWidth: '256px' }} alt="" /> */}
-              <div className="card border-0 mt-5" style={{ zIndex: 1 }}>
-                <div className="card-body p-0">
-                  {/* <form method="post" name="myForm" onsubmit="return validateForm()"> */}
-                  <form method="post" name="myForm">
-                    <p id="error-msg" className="mb-0" />
-                    <div id="simple-msg" />
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="mb-3">
-                          <label className="form-label">
-                            Your Name <span className="text-danger">*</span>
-                          </label>
-                          <div className="form-icon position-relative">
-                            <i data-feather="user" className="fea icon-sm icons" />
-                            <input name="name" id="name" type="text" className="form-control ps-5" placeholder="Name :" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="mb-3">
-                          <label className="form-label">
-                            Your Email <span className="text-danger">*</span>
-                          </label>
-                          <div className="form-icon position-relative">
-                            <i data-feather="mail" className="fea icon-sm icons" />
-                            <input name="email" id="email" type="email" className="form-control ps-5" placeholder="Email :" />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <div className="mb-3">
-                          <label className="form-label">Subject</label>
-                          <div className="form-icon position-relative">
-                            <i data-feather="book" className="fea icon-sm icons" />
-                            <input name="subject" id="subject" className="form-control ps-5" placeholder="subject :" />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <div className="mb-3">
-                          <label className="form-label">
-                            Comments <span className="text-danger">*</span>
-                          </label>
-                          <div className="form-icon position-relative">
-                            <i data-feather="message-circle" className="fea icon-sm icons clearfix" />
-                            <textarea
-                              name="comments"
-                              id="comments"
-                              rows={4}
-                              className="form-control ps-5"
-                              placeholder="Message :"
-                              defaultValue={''}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12">
-                        <div className="d-grid">
-                          <button type="submit" id="submit" name="send" className="btn btn-primary">
-                            Send Message
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 }
