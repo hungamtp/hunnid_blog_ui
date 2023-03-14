@@ -780,8 +780,8 @@ function MainLayout({ children }) {
       <div className="offcanvas offcanvas-end bg-white shadow" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div className="offcanvas-header p-4 border-bottom">
           <h5 id="offcanvasRightLabel" className="mb-0">
-            <img src="asset/images/logo-dark.png" height={24} className="light-version" alt="" />
-            <img src="asset/images/logo-light.png" height={24} className="dark-version" alt="" />
+            {/* <img src="asset/images/logo-dark.png" height={24} className="light-version" alt="" />
+            <img src="asset/images/logo-light.png" height={24} className="dark-version" alt="" /> */}
           </h5>
           <button type="button" className="btn-close d-flex align-items-center text-dark" data-bs-dismiss="offcanvas" aria-label="Close">
             <i className="uil uil-times fs-4" />

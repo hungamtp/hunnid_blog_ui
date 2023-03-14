@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Post from 'components/common/post';
 import { useState } from 'react';
 import { useGetPosts } from 'services/getPost';
-import { Pagination } from '@mui/material';
+import { Pagination, Skeleton } from '@mui/material';
 const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
@@ -13,6 +13,18 @@ const Home = () => {
   const handleChangePage = (event, value) => {
     setPage(value);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const renderSkeleton = () => {
+    var skeletons = [];
+    for (var i = 0; i < 9; i++) {
+      skeletons.push(
+        <div className="col-lg-4 col-md-6 mb-4 pb-2">
+          <Skeleton variant="rectangular" width={360} height={360} className="  rounded border-0 shadow " />
+        </div>
+      );
+    }
+    return skeletons;
   };
   return (
     <>
@@ -27,10 +39,11 @@ const Home = () => {
         <section className="section">
           <div className="container">
             <div className="row">
-              {data &&
-                data.data.map(post => {
-                  return <Post post={post} key={post.id} isLoading={isLoading} />;
-                })}
+              {data
+                ? data.data.map(post => {
+                    return <Post post={post} key={post.id} isLoading={isLoading} />;
+                  })
+                : renderSkeleton()}
 
               {/* PAGINATION START */}
               <div className="col-12" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
