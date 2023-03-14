@@ -41,7 +41,7 @@ const Home = () => {
             <div className="row">
               {data
                 ? data.data.map(post => {
-                    return <Post post={post} key={post.id} isLoading={isLoading} />;
+                    return <Post post={post} key={post.id} />;
                   })
                 : renderSkeleton()}
 

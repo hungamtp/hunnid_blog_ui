@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Chip } from '@mui/material';
-const Post = ({ post, isLoading, isFetching }) => {
+const Post = ({ post }) => {
   return (
     <Link href={`/post/${post.id}`} className="col-lg-4 col-md-6 mb-4 pb-2">
       <div className="card blog rounded border-0 shadow overflow-hidden">
@@ -22,29 +22,19 @@ const Post = ({ post, isLoading, isFetching }) => {
           </div>
         </div>
         <div className="author">
-          <div className="flex">
-            <small>
-              <img src="/asset/icon/user.svg" width={14} />
-            </small>
-            <small className="text-light user d-block">
-              <i className="uil uil-user" /> hungnb_
-            </small>
+          <div style={{ display: 'block' }}>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <div>
+                <img src="/asset/icon/user.svg" />
+              </div>
+              <div style={{ color: 'white', marginTop: '2px' }}>hungnb_</div>
+            </div>
           </div>
-          <div className="flex">
-            <small>
-              <img src="/asset/icon/user.svg" width={14} />
-            </small>
-            <small className="text-light user d-block">
-              <i className="uil uil-user" /> {post.viewCount}
-            </small>
-          </div>
-          <div className="flex">
-            <small>
-              <RemoveRedEyeOutlinedIcon />
-            </small>
-            <small className="text-light user d-block">
-              <i className="uil uil-user" /> {post.createdDate.toString().split('T')[0]}
-            </small>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div>
+              <img src="/asset/icon/user.svg" />
+            </div>
+            <div style={{ color: 'white', marginTop: '2px' }}>{post.viewCount}</div>
           </div>
         </div>
       </div>
