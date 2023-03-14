@@ -7,7 +7,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <link rel="shortcut icon" href="asset/images/favicon.ico" />
 
           <link href="/asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
           <link href="/asset/css/tobii.min.css" rel="stylesheet" type="text/css" />

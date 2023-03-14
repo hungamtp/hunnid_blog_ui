@@ -16,8 +16,9 @@ const Post = ({ post, isLoading, isFetching }) => {
           </h5>
 
           <div className="flex justify-end">
-            <Chip label="tech" color="success" variant="outlined" size="small" />
-            <Chip label="latest" color="success" variant="outlined" size="small" />
+            {post.tags.map(tag => {
+              return <Chip label={tag.tag} id={tag.id} color="success" variant="outlined" size="small" />;
+            })}
           </div>
         </div>
         <div className="author">

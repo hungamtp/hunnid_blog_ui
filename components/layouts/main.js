@@ -790,7 +790,7 @@ function MainLayout({ children }) {
         <div className="offcanvas-body p-4">
           <div className="row">
             <div className="col-12">
-              <img src="asset/images/contact.svg" className="img-fluid d-block mx-auto" style={{ maxWidth: '256px' }} alt="" />
+              {/* <img src="asset/images/contact.svg" className="img-fluid d-block mx-auto" style={{ maxWidth: '256px' }} alt="" /> */}
               <div className="card border-0 mt-5" style={{ zIndex: 1 }}>
                 <div className="card-body p-0">
                   {/* <form method="post" name="myForm" onsubmit="return validateForm()"> */}
