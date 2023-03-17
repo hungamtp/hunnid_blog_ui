@@ -1,13 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from 'components/common/Footer';
-import { Fade, Box, Paper, FormControlLabel, Switch } from '@mui/material';
+import { Fade } from '@mui/material';
 import { useState } from 'react';
+import { LanguageData } from '@/utils/context';
+import { useContext } from 'react';
 function MainLayout({ children }) {
   const [checked, setChecked] = useState(false);
-
-  const handleChange = () => {
+  const { language, setLanguage } = useContext(LanguageData);
+  const handleChange = language => {
     setChecked(prev => !prev);
+    setLanguage(language);
   };
   return (
     <>
@@ -22,7 +25,7 @@ function MainLayout({ children }) {
                 <Fade in={checked} timeout={2}>
                   <div
                     className="btn btn-icon btn-pills btn-dark"
-                    onClick={handleChange}
+                    onClick={() => handleChange('VN')}
                     style={{ backgroundColor: 'transparent', display: !checked && 'none' }}
                   >
                     VN
@@ -31,7 +34,7 @@ function MainLayout({ children }) {
                 <Fade in={!checked} timeout={2}>
                   <div
                     className="btn btn-icon btn-pills btn-primary"
-                    onClick={handleChange}
+                    onClick={() => handleChange('EN')}
                     style={{ backgroundColor: 'transparent', display: checked && 'none' }}
                   >
                     EN

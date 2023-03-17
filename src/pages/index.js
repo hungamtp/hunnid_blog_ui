@@ -3,14 +3,15 @@ import Post from 'components/common/post';
 import { useState } from 'react';
 import { useGetPosts } from 'services/getPost';
 import { Pagination, Skeleton } from '@mui/material';
-import Chip from '@mui/material';
+import { useContext } from 'react';
 import Filter from 'components/common/filter';
+import { LanguageData } from '@/utils/context';
 const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
-  const [languageId, setLanguageId] = useState('26519154-b139-11ed-9976-588fc631a4a5');
+  const { language, setLanguage } = useContext(LanguageData);
 
-  const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, languageId: languageId });
+  const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, language: language });
   const handleChangePage = (event, value) => {
     setPage(value);
     window.scrollTo({ top: 0, behavior: 'smooth' });
