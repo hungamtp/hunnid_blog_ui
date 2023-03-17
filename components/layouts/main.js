@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from 'components/common/Footer';
+import { Fade, Box, Paper, FormControlLabel, Switch, Collapse } from '@mui/material';
+import { useState } from 'react';
 function MainLayout({ children }) {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    setChecked(prev => !prev);
+  };
   return (
     <>
       <header id="topnav" className="defaultscroll sticky bg-white">
@@ -12,7 +19,16 @@ function MainLayout({ children }) {
           <ul className="buy-button list-inline mb-0">
             <div className="list-inline-item ps-1 mb-0 ">
               <li>
-                <div className="btn btn-icon btn-pills btn-light">VN</div>
+                <Collapse in={checked}>
+                  <div className="btn btn-icon btn-pills btn-dark" onClick={handleChange}>
+                    VN
+                  </div>
+                </Collapse>
+                <Collapse in={!checked}>
+                  <div className="btn btn-icon btn-pills btn-primary" onClick={handleChange}>
+                    EN
+                  </div>
+                </Collapse>
               </li>
             </div>
           </ul>

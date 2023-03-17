@@ -1,9 +1,10 @@
 import MainLayout from 'components/layouts/main';
-import Link from 'next/link';
 import Post from 'components/common/post';
 import { useState } from 'react';
 import { useGetPosts } from 'services/getPost';
 import { Pagination, Skeleton } from '@mui/material';
+import Chip from '@mui/material';
+import Filter from 'components/common/filter';
 const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
@@ -26,6 +27,7 @@ const Home = () => {
     }
     return skeletons;
   };
+
   return (
     <>
       <div>
@@ -38,6 +40,9 @@ const Home = () => {
         </div>
         <section className="section">
           <div className="container">
+            <div className="filter-section" style={{ display: 'flex', height: '50px' }}>
+              <Filter />
+            </div>
             <div className="row">
               {data
                 ? data.data.map(post => {
@@ -47,14 +52,7 @@ const Home = () => {
 
               {/* PAGINATION START */}
               <div className="col-12" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                <Pagination
-                  count={data && data.totalPages}
-                  isFetching={isFetching}
-                  size="small"
-                  hidePrevButton
-                  hideNextButton
-                  onChange={handleChangePage}
-                />
+                <Pagination count={data && data.totalPages} size="small" hidePrevButton hideNextButton onChange={handleChangePage} />
               </div>
             </div>
           </div>
