@@ -12,9 +12,9 @@ const Home = () => {
   const [size, setSize] = useState(9);
   const { language, setLanguage } = useContext(LanguageData);
   const { data: tags } = useGetTags();
-  const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, language: language ? language : 'VN', tags });
+  const { data } = useGetPosts({ page: page, size: size, language: language ? language : 'VN', tags });
   const handleChangePage = (event, value) => {
-    setPage(value);
+    setPage(value - 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -58,7 +58,6 @@ const Home = () => {
                   })
                 : renderSkeleton()}
 
-              {/* PAGINATION START */}
               <div className="col-12" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                 <Pagination count={data && data.totalPages} size="small" hidePrevButton hideNextButton onChange={handleChangePage} />
               </div>
