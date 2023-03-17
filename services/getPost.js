@@ -3,9 +3,9 @@ import { URL } from 'constraints/env';
 import axios from 'axios';
 import qs from 'qs';
 
-export function useGetPosts({ page, size, language }) {
-  const { data, ...rest } = useQuery(['getPost', [page, size, language]], async () => {
-    const data = await fetchPosts({ page: page, size: size, language: language });
+export function useGetPosts({ page, size, language, tagIds }) {
+  const { data, ...rest } = useQuery(['getPost', [page, size, language, tagIds]], async () => {
+    const data = await fetchPosts({ page: page, size: size, language: language, tagIds: tagIds });
 
     return data;
   });

@@ -1,17 +1,18 @@
 import MainLayout from 'components/layouts/main';
 import Post from 'components/common/post';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useGetPosts } from 'services/getPost';
 import { Pagination, Skeleton } from '@mui/material';
 import { useContext } from 'react';
 import Filter from 'components/common/filter';
 import { LanguageData } from '@/utils/context';
+import { useGetTags } from 'services/getTag';
 const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
   const { language, setLanguage } = useContext(LanguageData);
-
-  const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, language: language });
+  const { data: tags } = useGetTags();
+  const { data, isLoading, isFetching } = useGetPosts({ page: page, size: size, language: language ? language : 'VN', tags });
   const handleChangePage = (event, value) => {
     setPage(value);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -42,7 +43,13 @@ const Home = () => {
         <section className="section">
           <div className="container">
             <div className="filter-section" style={{ display: 'flex', height: '50px' }}>
-              <Filter />
+              <Filter tags={tags} />
+            </div>
+            <div>
+              {tags &&
+                tags.map(tag => {
+                  <div>tag</div>;
+                })}
             </div>
             <div className="row">
               {data

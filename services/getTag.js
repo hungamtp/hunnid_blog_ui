@@ -5,7 +5,6 @@ import axios from 'axios';
 export function useGetTags() {
   const { data, ...rest } = useQuery('getTags', async () => {
     const data = await fetchTags();
-
     return data;
   });
 
@@ -17,6 +16,5 @@ export function useGetTags() {
 
 async function fetchTags() {
   const { data } = await axios.get(`${URL}tags`);
-
   return data;
 }
