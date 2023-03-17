@@ -1,4 +1,5 @@
 import Context from '@/utils/context';
+import TagContext from '@/utils/tags';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import '../styles/Home.module.css';
@@ -8,13 +9,15 @@ const MyApp = ({ Component, pageProps }) => {
   const Layout = Component.Layout;
 
   return (
-    <Context>
-      <QueryClientProvider client={queryClient}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </QueryClientProvider>
-    </Context>
+    <TagContext>
+      <Context>
+        <QueryClientProvider client={queryClient}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </QueryClientProvider>
+      </Context>
+    </TagContext>
   );
 };
 

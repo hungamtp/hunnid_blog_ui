@@ -10,10 +10,12 @@ import { useGetTags } from 'services/getTag';
 const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
-  const { language, setLanguage } = useContext(LanguageData);
+  const { language } = useContext(LanguageData);
   const { data: tags } = useGetTags();
-  const { data } = useGetPosts({ page: page, size: size, language: language ? language : 'VN', tags });
+
+  const { data: posts } = useGetPosts({ page: page, size: size, language: language ? language : 'VN', tags });
   const handleChangePage = (event, value) => {
+    event.preventDefault();
     setPage(value - 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -33,33 +35,23 @@ const Home = () => {
   return (
     <>
       <div>
-        <div className="position-relative">
-          <div className="shape overflow-hidden text-white">
-            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor" />
-            </svg>
-          </div>
-        </div>
         <section className="section">
           <div className="container">
-            <div className="filter-section" style={{ display: 'flex', height: '50px' }}>
+            <div className="filter-section" style={{ display: 'flex', height: '50px', position: 'relative' }}>
               <Filter tags={tags} />
-            </div>
-            <div>
-              {tags &&
-                tags.map(tag => {
-                  <div>tag</div>;
-                })}
+              <div className="reset-button" style={{ position: 'absolute', right: '0', top: '0' }}>
+                reset
+              </div>
             </div>
             <div className="row">
-              {data
-                ? data.data.map(post => {
+              {posts
+                ? posts.data.map(post => {
                     return <Post post={post} key={post.id} />;
                   })
                 : renderSkeleton()}
 
               <div className="col-12" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                <Pagination count={data && data.totalPages} size="small" hidePrevButton hideNextButton onChange={handleChangePage} />
+                <Pagination count={posts && posts.totalPages} size="small" hidePrevButton hideNextButton onChange={handleChangePage} />
               </div>
             </div>
           </div>

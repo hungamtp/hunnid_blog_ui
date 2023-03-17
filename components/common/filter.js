@@ -1,34 +1,30 @@
-import { useGetTags } from 'services/getTag';
-
+import { TagsData } from '@/utils/tags';
+import { useContext } from 'react';
 const { Chip } = require('@mui/material');
 
-const Filter = ({ tags }) => {
-  console.log(tags);
+const Filter = () => {
+  const { tags, setTags } = useContext(TagsData);
+  console.log('tags filter', tags);
+
+  const onRemoveTag = tagId => {
+    if (tags.length > 1) {
+      const newTags = tags.filter(item => item.id !== tagId);
+      setTags(newTags);
+    }
+  };
   return (
     <>
       {tags &&
-        tags.map(tag => {
+        tags.map(tag => (
           <Chip
             key={tag.id}
-            label={tag['tag']}
+            label={tag.tag}
             size="small"
             variant="outlined"
-            onDelete={() => {
-              console.log('object');
-            }}
+            onDelete={() => onRemoveTag(tag.id)}
             style={{ marginLeft: '2px' }}
-          />;
-        })}
-
-      <Chip
-        label="text"
-        size="small"
-        variant="outlined"
-        onDelete={() => {
-          console.log('object');
-        }}
-        style={{ marginLeft: '2px' }}
-      />
+          />
+        ))}
     </>
   );
 };

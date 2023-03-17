@@ -24,7 +24,7 @@ function MainLayout({ children }) {
               <li>
                 <Fade in={checked} timeout={2}>
                   <div
-                    className="btn btn-icon btn-pills btn-dark"
+                    className="btn btn-icon btn-pills btn-light"
                     onClick={() => handleChange('VN')}
                     style={{ backgroundColor: 'transparent', display: !checked && 'none' }}
                   >
@@ -33,7 +33,7 @@ function MainLayout({ children }) {
                 </Fade>
                 <Fade in={!checked} timeout={2}>
                   <div
-                    className="btn btn-icon btn-pills btn-primary"
+                    className="btn btn-icon btn-pills btn-dark"
                     onClick={() => handleChange('EN')}
                     style={{ backgroundColor: 'transparent', display: checked && 'none' }}
                   >
