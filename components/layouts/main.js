@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from 'components/common/Footer';
-import { Fade, Box, Paper, FormControlLabel, Switch, Collapse } from '@mui/material';
+import { Fade, Box, Paper, FormControlLabel, Switch } from '@mui/material';
 import { useState } from 'react';
 function MainLayout({ children }) {
   const [checked, setChecked] = useState(false);
@@ -19,16 +19,24 @@ function MainLayout({ children }) {
           <ul className="buy-button list-inline mb-0">
             <div className="list-inline-item ps-1 mb-0 ">
               <li>
-                <Collapse in={checked}>
-                  <div className="btn btn-icon btn-pills btn-dark" onClick={handleChange}>
+                <Fade in={checked} timeout={2}>
+                  <div
+                    className="btn btn-icon btn-pills btn-dark"
+                    onClick={handleChange}
+                    style={{ backgroundColor: 'transparent', display: !checked && 'none' }}
+                  >
                     VN
                   </div>
-                </Collapse>
-                <Collapse in={!checked}>
-                  <div className="btn btn-icon btn-pills btn-primary" onClick={handleChange}>
+                </Fade>
+                <Fade in={!checked} timeout={2}>
+                  <div
+                    className="btn btn-icon btn-pills btn-primary"
+                    onClick={handleChange}
+                    style={{ backgroundColor: 'transparent', display: checked && 'none' }}
+                  >
                     EN
                   </div>
-                </Collapse>
+                </Fade>
               </li>
             </div>
           </ul>
