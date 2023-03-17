@@ -44,7 +44,8 @@ export default function AdminLayout({ children }) {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 1 }}>
+        <Toolbar>save post here</Toolbar>
         <div>{children}</div>
       </Box>
     </Box>

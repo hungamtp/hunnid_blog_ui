@@ -24,7 +24,7 @@ const Home = () => {
     var skeletons = [];
     for (var i = 0; i < 9; i++) {
       skeletons.push(
-        <div className="col-lg-4 col-md-6 mb-4 pb-2">
+        <div className="col-lg-4 col-md-6 mb-4 pb-2" key={i}>
           <Skeleton variant="rectangular" width={360} height={360} className="  rounded border-0 shadow " />
         </div>
       );

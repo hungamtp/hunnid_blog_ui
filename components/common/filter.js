@@ -4,7 +4,6 @@ const { Chip } = require('@mui/material');
 
 const Filter = () => {
   const { tags, setTags } = useContext(TagsData);
-  console.log('tags filter', tags);
 
   const onRemoveTag = tagId => {
     if (tags.length > 1) {
