@@ -99,8 +99,8 @@ const Toolbar = (props)=>{
                                             return <Embed key={element.id} format={element.format} editor={editor} />
                                         case 'color-picker':
                                             return <ColorPicker key={element.id} activeMark={activeMark} format={element.format} editor={editor}/>
-                                        case 'table':
-                                            return <TableSelector key={element.id} editor={editor}/>
+                                        // case 'table':
+                                        //     return <TableSelector key={element.id} editor={editor}/>
                                         case 'id':
                                             return <Id editor={editor}/>
                                         case 'equation':

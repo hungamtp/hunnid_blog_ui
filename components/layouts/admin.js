@@ -36,7 +36,7 @@ export default function AdminLayout({ children }) {
         <List>
           {['Post'].map((text, index) => (
             <ListItem key={text} disablePadding>
-              <ListItemButton>
+              <ListItemButton selected={true} color="black">
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
@@ -45,7 +45,6 @@ export default function AdminLayout({ children }) {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 1 }}>
-        <Toolbar>save post here</Toolbar>
         <div>{children}</div>
       </Box>
     </Box>
