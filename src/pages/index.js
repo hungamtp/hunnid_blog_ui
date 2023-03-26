@@ -10,7 +10,7 @@ import { useGetTags } from 'services/getTag';
 import RotateLeftIcon from '@mui/icons-material/RotateLeft';
 const Home = () => {
   const [page, setPage] = useState(0);
-  const [size, setSize] = useState(9);
+  const [size, setSize] = useState(12);
   const { language } = useContext(LanguageData);
   const { data: tags } = useGetTags();
   const [isClickRestFilter, setIsClickRestFilter] = useState(false);
@@ -46,7 +46,8 @@ const Home = () => {
             </div>
             <div className="row">
               {posts
-                ? posts.data.map(post => {
+                ? posts.data.map((post, index) => {
+                    post.index = index;
                     return <Post post={post} key={post.id} />;
                   })
                 : renderSkeleton()}

@@ -4,14 +4,32 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Chip } from '@mui/material';
 import { useContext } from 'react';
 import { TagsData } from '@/utils/tags';
-const Post = ({ post }) => {
+const Post = ({ post, index }) => {
   const { tags, setTags } = useContext(TagsData);
   const addTagFilter = tag => {
     console.log(tag);
     // setTags([...tags, tag]);
   };
+
+  var classNameTemp = '';
+  switch (post.index % 4) {
+    case 0:
+      classNameTemp = 'col-lg-8 col-md-6 mb-4 pb-2';
+      break;
+    case 1:
+      classNameTemp = 'col-lg-4 col-md-6 mb-4 pb-2';
+      break;
+    case 2:
+      classNameTemp = 'col-lg-4 col-md-6 mb-4 pb-2';
+      break;
+    case 3:
+      classNameTemp = 'col-lg-8 col-md-6 mb-4 pb-2';
+      break;
+  }
+
+  console.log('index', post.index);
   return (
-    <div className="col-lg-4 col-md-6 mb-4 pb-2">
+    <div className={classNameTemp}>
       <div className="card blog rounded border-0 shadow overflow-hidden">
         <Link href={`/post/${post.id}`}>
           <div className="position-relative">
