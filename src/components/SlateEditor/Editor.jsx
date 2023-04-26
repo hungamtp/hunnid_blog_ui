@@ -9,7 +9,8 @@ import withTables from './plugins/withTable.js'
 import withEmbeds from './plugins/withEmbeds.js'
 import withEquation from './plugins/withEquation.js'
 import CodeToText from './Elements/CodeToText/CodeToText'
-import { serialize } from './utils/serializer';
+import { serializer } from './utils/serializer';
+
 
 
 const Element = (props) =>{
@@ -30,6 +31,7 @@ const SlateEditor = ()=>{
 
     const handleEditorChange = (newValue) =>{
         setValue(newValue)
+        console.log(serializer(newValue));
     }
 
 
