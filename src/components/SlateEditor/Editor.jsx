@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { createEditor } from 'slate';
 import { withHistory } from "slate-history";
 import {Slate, Editable, withReact, } from 'slate-react';
@@ -10,7 +10,12 @@ import withEmbeds from './plugins/withEmbeds.js'
 import withEquation from './plugins/withEquation.js'
 import CodeToText from './Elements/CodeToText/CodeToText'
 import { serializer } from './utils/serializer';
-
+import { CreatePostData } from '@/utils/create-post-context';
+import { TagsData } from '@/utils/tags';
+import { LanguageData } from '@/utils/languageContext';
+import { AdminLanguageData } from '@/utils/admin-language-context';
+import { PostContentTypeData } from '@/utils/post-content-type-context';
+import { AllLanguageData } from '@/utils/all-languages-context';
 
 
 const Element = (props) =>{
@@ -29,9 +34,14 @@ const SlateEditor = ()=>{
         },
     ]);
 
+    const { savedPost, setSavedPost } = useContext(CreatePostData);
+    const { adminLanguage } = useContext(AdminLanguageData);
+    const { languages } = useContext(AllLanguageData);
+    const { postContentType } = useContext(PostContentTypeData);
     const handleEditorChange = (newValue) =>{
-        setValue(newValue)
+        setValue(newValue);
         console.log(serializer(newValue));
+        console.log(savedPost);
     }
 
 

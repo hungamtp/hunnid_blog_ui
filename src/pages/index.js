@@ -5,7 +5,7 @@ import { useGetPosts } from 'services/getPost';
 import { Pagination, Skeleton } from '@mui/material';
 import { useContext } from 'react';
 import Filter from 'components/common/filter';
-import { LanguageData } from '@/utils/context';
+import { LanguageData } from '@/utils/languageContext';
 import { useGetTags } from 'services/getTag';
 import RotateLeftIcon from '@mui/icons-material/RotateLeft';
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
   const { language } = useContext(LanguageData);
   const { data: tags } = useGetTags();
   const [isClickRestFilter, setIsClickRestFilter] = useState(false);
-  const { data: posts } = useGetPosts({ page: page, size: size, language: language ? language : 'VN', tags });
+  const { data: posts } = useGetPosts({ page: page, size: size, language: language, tags });
   const handleChangePage = (event, value) => {
     event.preventDefault();
     setPage(value - 1);

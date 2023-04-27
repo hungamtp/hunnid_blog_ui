@@ -4,7 +4,11 @@ import { Button, FilledInput } from '@mui/material';
 import LanguageSeletor from '@/components/common/language-seletor';
 import PostEditor from '@/components/common/post-editor';
 import { useEffect } from 'react';
+import { useGetContentType } from 'services/getContentType';
+import { useGetLanguages } from 'services/getLanguage';
 const Admin = () => {
+  useGetContentType();
+  useGetLanguages();
   return (
     <>
       <div id="toolbar-admin">

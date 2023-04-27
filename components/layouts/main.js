@@ -3,10 +3,10 @@ import Link from 'next/link';
 import Footer from 'components/common/Footer';
 import { Fade } from '@mui/material';
 import { useState } from 'react';
-import { LanguageData } from '@/utils/context';
+import { LanguageData } from '@/utils/languageContext';
 import { useContext } from 'react';
 function MainLayout({ children }) {
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
   const { setLanguage } = useContext(LanguageData);
   const handleChange = language => {
     setChecked(prev => !prev);
@@ -25,7 +25,7 @@ function MainLayout({ children }) {
                 <Fade in={checked} timeout={800}>
                   <div
                     className="btn btn-icon btn-pills btn-light"
-                    onClick={() => handleChange('VN')}
+                    onClick={() => handleChange('EN')}
                     style={{ display: !checked ? 'none' : 'flex' }}
                   >
                     VN
@@ -34,7 +34,7 @@ function MainLayout({ children }) {
                 <Fade in={!checked} timeout={800}>
                   <div
                     className="btn btn-icon btn-pills btn-dark"
-                    onClick={() => handleChange('EN')}
+                    onClick={() => handleChange('VN')}
                     style={{ display: checked ? 'none' : 'flex' }}
                   >
                     EN
