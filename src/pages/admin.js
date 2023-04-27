@@ -10,10 +10,12 @@ import { CreatePostData } from '@/utils/create-post-context';
 import { PostContentTypeData } from '@/utils/post-content-type-context';
 import { serializer } from '@/components/SlateEditor/utils/serializer';
 import { createPost } from 'services/useCreatePost';
-import { useMutation } from 'react-query';
+
+import { CurrentAdminTabData } from '@/utils/current-admin-tab';
 const Admin = () => {
   useGetContentType();
   useGetLanguages();
+  const { currentAdminTab, setCurrentAdminTab } = useContext(CurrentAdminTabData);
   const { savedPost, setSavedPost } = useContext(CreatePostData);
   const { postContentType } = useContext(PostContentTypeData);
   const handleCreatePost = () => {
@@ -31,7 +33,7 @@ const Admin = () => {
     });
   };
   return (
-    <>
+    <div style={{ display: currentAdminTab == 'Create' ? 'block' : 'none' }}>
       <div id="toolbar-admin">
         <div>
           <Button variant="contained" color="warning" size="small" style={{ marginRight: '10px' }} onClick={handleCreatePost}>
@@ -44,7 +46,7 @@ const Admin = () => {
         <LanguageSeletor />
       </div>
       <PostEditor />
-    </>
+    </div>
   );
 };
 

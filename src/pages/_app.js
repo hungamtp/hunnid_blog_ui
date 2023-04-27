@@ -10,35 +10,37 @@ import PostContentTypeContext from '@/utils/post-content-type-context';
 import CurrentTitleContext from '@/utils/current-title';
 import CurrentCoverImageContext from '@/utils/current-cover-image';
 import CurrentContentContext from '@/utils/current-content';
-
+import CurrentAdminTabContext from '@/utils/current-admin-tab';
 const MyApp = ({ Component, pageProps }) => {
   const queryClient = new QueryClient();
   const Layout = Component.Layout;
 
   return (
-    <CurrentContentContext>
-      <CurrentCoverImageContext>
-        <CurrentTitleContext>
-          <PostContentTypeContext>
-            <AdminLanguageContext>
-              <AllLanguageContext>
-                <CreatePostContext>
-                  <TagContext>
-                    <Context>
-                      <QueryClientProvider client={queryClient}>
-                        <Layout>
-                          <Component {...pageProps} />
-                        </Layout>
-                      </QueryClientProvider>
-                    </Context>
-                  </TagContext>
-                </CreatePostContext>
-              </AllLanguageContext>
-            </AdminLanguageContext>
-          </PostContentTypeContext>
-        </CurrentTitleContext>
-      </CurrentCoverImageContext>
-    </CurrentContentContext>
+    <CurrentAdminTabContext>
+      <CurrentContentContext>
+        <CurrentCoverImageContext>
+          <CurrentTitleContext>
+            <PostContentTypeContext>
+              <AdminLanguageContext>
+                <AllLanguageContext>
+                  <CreatePostContext>
+                    <TagContext>
+                      <Context>
+                        <QueryClientProvider client={queryClient}>
+                          <Layout>
+                            <Component {...pageProps} />
+                          </Layout>
+                        </QueryClientProvider>
+                      </Context>
+                    </TagContext>
+                  </CreatePostContext>
+                </AllLanguageContext>
+              </AdminLanguageContext>
+            </PostContentTypeContext>
+          </CurrentTitleContext>
+        </CurrentCoverImageContext>
+      </CurrentContentContext>
+    </CurrentAdminTabContext>
   );
 };
 
