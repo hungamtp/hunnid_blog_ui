@@ -6,10 +6,7 @@ import { useContext } from 'react';
 import { TagsData } from '@/utils/tags';
 const Post = ({ post }) => {
   const { tags, setTags } = useContext(TagsData);
-  const addTagFilter = tag => {
-    console.log(tag);
-    // setTags([...tags, tag]);
-  };
+  const addTagFilter = tag => {};
   return (
     <div className="col-lg-4 col-md-6 mb-4 pb-2">
       <div className="card blog rounded border-0 shadow overflow-hidden">

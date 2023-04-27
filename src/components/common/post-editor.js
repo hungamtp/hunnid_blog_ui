@@ -5,6 +5,7 @@ import { AdminLanguageData } from '@/utils/admin-language-context';
 import { PostContentTypeData } from '@/utils/post-content-type-context';
 import { AllLanguageData } from '@/utils/all-languages-context';
 import { CurrentPostTitleData } from '@/utils/current-title';
+import { CurrentPostCoverImageData } from '@/utils/current-cover-image';
 
 const PostEditor = () => {
   const { savedPost, setSavedPost } = useContext(CreatePostData);
@@ -12,6 +13,11 @@ const PostEditor = () => {
   const { languages } = useContext(AllLanguageData);
   const { postContentType } = useContext(PostContentTypeData);
   const { currentTitle, setCurrentTitle } = useContext(CurrentPostTitleData);
+  const { currentCoverImage, setCurrentCoverImage } = useContext(CurrentPostCoverImageData);
+  const handleOnChangeCoverImage = e => {
+    e.preventDefault();
+    setCurrentCoverImage(e.target.value);
+  };
   const handleOnChangeTitle = e => {
     e.preventDefault();
     const postTitleId = postContentType.filter(type => type.type == 'POST_TITLE')[0].id;
@@ -41,7 +47,7 @@ const PostEditor = () => {
         <input placeholder="Title" className="title-editor" value={currentTitle} onChange={e => handleOnChangeTitle(e)} />
       </div>
       <div className="editor-element">
-        <input placeholder="Image" className="title-editor" />
+        <input placeholder="Image" className="title-editor" value={currentCoverImage} onChange={e => handleOnChangeCoverImage(e)} />
       </div>
       <div className="editor-element">
         <SlateEditor />
