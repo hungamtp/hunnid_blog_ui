@@ -9,6 +9,8 @@ import { useGetLanguages } from 'services/getLanguage';
 import { CreatePostData } from '@/utils/create-post-context';
 import { PostContentTypeData } from '@/utils/post-content-type-context';
 import { serializer } from '@/components/SlateEditor/utils/serializer';
+import { createPost } from 'services/useCreatePost';
+import { useMutation } from 'react-query';
 const Admin = () => {
   useGetContentType();
   useGetLanguages();
@@ -23,6 +25,10 @@ const Admin = () => {
       }
     }
     setSavedPost({ ...savedPost, contents: newContent });
+
+    createPost(savedPost).then(res => {
+      console.log(res);
+    });
   };
   return (
     <>
