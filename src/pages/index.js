@@ -38,10 +38,24 @@ const Home = () => {
       <div>
         <section className="section">
           <div className="container">
-            <div className="filter-section" style={{ display: 'flex', height: '50px', position: 'relative' }}>
-              <Filter tags={tags} />
-              <div className="reset-button" style={{ position: 'absolute', right: '0', top: '0' }}>
-                <RotateLeftIcon />
+            <div className="filter-section" style={{ marginBottom: '20px' }}>
+              <div className="text-center subcribe-form">
+                <form style={{ maxWidth: '800px' }} autocomplete="off">
+                  <div className="mb-0">
+                    <input
+                      type="text"
+                      id="help"
+                      autocomplete="off"
+                      name="name"
+                      class="border bg-white rounded-pill"
+                      required=""
+                      placeholder="Search"
+                    />
+                    <button type="submit" className="btn btn-pills btn-primary">
+                      Search
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
             <div className="row">
