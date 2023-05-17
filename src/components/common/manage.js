@@ -12,7 +12,7 @@ import { useContext } from 'react';
 import { useGetPostsAdmin } from 'services/getPostAdmin';
 import { AdminLanguageData } from '@/utils/admin-language-context';
 import { useState } from 'react';
-import { Pagination, Skeleton } from '@mui/material';
+import { Button, Pagination } from '@mui/material';
 const Manage = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
@@ -24,6 +24,13 @@ const Manage = () => {
     event.preventDefault();
     setPage(value - 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const show = () => {
+    console.log('show');
+  };
+
+  const hide = () => {
+    console.log('hide');
   };
   return (
     <div style={{ display: currentAdminTab == 'Manage' ? 'block' : 'none' }}>
@@ -44,7 +51,9 @@ const Manage = () => {
                   <TableCell align="left">{post.title}</TableCell>
                   <TableCell align="right">{post.createAt}</TableCell>
                   <TableCell align="right">{post.viewCount}</TableCell>
-                  <TableCell align="right">{post.hidden + ''}</TableCell>
+                  <TableCell align="right">
+                    {post.hidden ? <Button onClick={() => show()}>Show</Button> : <Button onClick={() => hide()}>Hide</Button>}
+                  </TableCell>
                 </TableRow>
               ))}
           </TableBody>

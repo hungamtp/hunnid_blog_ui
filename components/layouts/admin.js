@@ -2,20 +2,13 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { CurrentAdminTabData } from '@/utils/current-admin-tab';
 import { useContext } from 'react';
 
 const drawerWidth = 240;
 
 export default function AdminLayout({ children }) {
-  const { setCurrentAdminTab } = useContext(CurrentAdminTabData);
+  const { currentAdminTab, setCurrentAdminTab } = useContext(CurrentAdminTabData);
   const handleChangeTab = text => {
     console.log(text);
     setCurrentAdminTab(text);
@@ -37,7 +30,20 @@ export default function AdminLayout({ children }) {
         anchor="left"
       >
         {['Create', 'Manage'].map((text, index) => (
-          <div key={index} onClick={() => handleChangeTab(text)} value={text}>
+          <div
+            key={index}
+            onClick={() => handleChangeTab(text)}
+            value={text}
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '10px',
+              marginTop: '10px',
+              height: '20px',
+              width: '100%',
+            }}
+          >
             {text}
           </div>
         ))}

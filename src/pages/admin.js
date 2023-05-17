@@ -12,6 +12,7 @@ import { serializer } from '@/components/SlateEditor/utils/serializer';
 import { createPost } from 'services/useCreatePost';
 
 import { CurrentAdminTabData } from '@/utils/current-admin-tab';
+import Manage from '@/components/common/manage';
 const Admin = () => {
   useGetContentType();
   useGetLanguages();
@@ -34,19 +35,22 @@ const Admin = () => {
     });
   };
   return (
-    <div style={{ display: currentAdminTab == 'Create' ? 'block' : 'none' }}>
-      <div id="toolbar-admin">
-        <div>
-          <Button variant="contained" color="warning" size="small" style={{ marginRight: '10px' }} onClick={handleCreatePost}>
-            Create
-          </Button>
-          <Button variant="contained" size="small">
-            Preview
-          </Button>
+    <div>
+      <div style={{ display: currentAdminTab == 'Create' ? 'block' : 'none' }}>
+        <div id="toolbar-admin">
+          <div>
+            <Button variant="contained" color="warning" size="small" style={{ marginRight: '10px' }} onClick={handleCreatePost}>
+              Create
+            </Button>
+            <Button variant="contained" size="small">
+              Preview
+            </Button>
+          </div>
+          <LanguageSeletor />
         </div>
-        <LanguageSeletor />
+        <PostEditor />
       </div>
-      <PostEditor />
+      <Manage style={{ display: currentAdminTab == 'Manage' ? 'block' : 'none' }} />
     </div>
   );
 };
