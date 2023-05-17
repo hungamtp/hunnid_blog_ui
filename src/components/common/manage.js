@@ -13,24 +13,24 @@ import { useGetPostsAdmin } from 'services/getPostAdmin';
 import { AdminLanguageData } from '@/utils/admin-language-context';
 import { useState } from 'react';
 import { Button, Pagination } from '@mui/material';
+import { showOrHidePost } from 'services/useHideOrShowPost';
 const Manage = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
   const { adminLanguage } = useContext(AdminLanguageData);
   const { data: posts } = useGetPostsAdmin({ page: page, size: size, language: adminLanguage });
-  console.log(posts ?? posts);
   const { currentAdminTab, setCurrentAdminTab } = useContext(CurrentAdminTabData);
   const handleChangePage = (event, value) => {
     event.preventDefault();
     setPage(value - 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  const show = () => {
-    console.log('show');
+  const show = postId => {
+    showOrHidePost({ postId: postId, hidden: true });
   };
 
-  const hide = () => {
-    console.log('hide');
+  const hide = postId => {
+    showOrHidePost({ postId: postId, hidden: false });
   };
   return (
     <div style={{ display: currentAdminTab == 'Manage' ? 'block' : 'none' }}>
@@ -52,7 +52,11 @@ const Manage = () => {
                   <TableCell align="right">{post.createAt}</TableCell>
                   <TableCell align="right">{post.viewCount}</TableCell>
                   <TableCell align="right">
-                    {post.hidden ? <Button onClick={() => show()}>Show</Button> : <Button onClick={() => hide()}>Hide</Button>}
+                    {post.hidden ? (
+                      <Button onClick={() => hide(post.id)}>Hide</Button>
+                    ) : (
+                      <Button onClick={() => show(post.id)}>Show</Button>
+                    )}
                   </TableCell>
                 </TableRow>
               ))}

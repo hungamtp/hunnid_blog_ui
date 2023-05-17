@@ -30,7 +30,6 @@ const Admin = () => {
     setSavedPost({ ...savedPost, contents: newContent });
 
     createPost(savedPost).then(res => {
-      console.log(res);
       setCurrentAdminTab('Manage');
     });
   };

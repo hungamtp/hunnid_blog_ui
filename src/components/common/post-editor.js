@@ -6,7 +6,9 @@ import { PostContentTypeData } from '@/utils/post-content-type-context';
 import { AllLanguageData } from '@/utils/all-languages-context';
 import { CurrentPostTitleData } from '@/utils/current-title';
 import { CurrentPostCoverImageData } from '@/utils/current-cover-image';
-
+import { TagsData } from '@/utils/tags';
+import { Chip } from '@mui/material';
+import { useGetTags } from 'services/getTag';
 const PostEditor = () => {
   const { savedPost, setSavedPost } = useContext(CreatePostData);
   const { adminLanguage } = useContext(AdminLanguageData);
@@ -18,6 +20,8 @@ const PostEditor = () => {
     e.preventDefault();
     setCurrentCoverImage(e.target.value);
   };
+  useGetTags();
+
   const handleOnChangeTitle = e => {
     e.preventDefault();
     const postTitleId = postContentType.filter(type => type.type == 'POST_TITLE')[0].id;
@@ -41,6 +45,14 @@ const PostEditor = () => {
     }
     setSavedPost({ ...savedPost, contents: newContent });
   };
+  const onRemoveTag = tagId => {
+    if (tags.length > 1) {
+      const newTags = tags.filter(item => item.id !== tagId);
+      setTags(newTags);
+      setSavedPost({ ...savedPost, tagIds: newTags.map(tag => tag.id) });
+    }
+  };
+  const { tags, setTags } = useContext(TagsData);
   return (
     <>
       <div className="editor-element">
@@ -49,6 +61,17 @@ const PostEditor = () => {
       <div className="editor-element">
         <input placeholder="Image" className="title-editor" value={currentCoverImage} onChange={e => handleOnChangeCoverImage(e)} />
       </div>
+      {tags &&
+        tags.map(tag => (
+          <Chip
+            key={tag.id}
+            label={tag.tag}
+            size="small"
+            variant="outlined"
+            onDelete={() => onRemoveTag(tag.id)}
+            style={{ marginLeft: '2px' }}
+          />
+        ))}
       <div className="editor-element">
         <SlateEditor />
       </div>

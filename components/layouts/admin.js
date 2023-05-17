@@ -10,7 +10,6 @@ const drawerWidth = 240;
 export default function AdminLayout({ children }) {
   const { currentAdminTab, setCurrentAdminTab } = useContext(CurrentAdminTabData);
   const handleChangeTab = text => {
-    console.log(text);
     setCurrentAdminTab(text);
   };
   return (
