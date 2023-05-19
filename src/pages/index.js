@@ -13,7 +13,6 @@ const Home = () => {
   const [size, setSize] = useState(9);
   const { language } = useContext(LanguageData);
   const { data: tags } = useGetTags();
-  const [isClickRestFilter, setIsClickRestFilter] = useState(false);
   const { data: posts } = useGetPosts({ page: page, size: size, language: language, tags });
   const handleChangePage = (event, value) => {
     event.preventDefault();

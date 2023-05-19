@@ -10,7 +10,7 @@ const Post = ({ post }) => {
   return (
     <div className="col-lg-4 col-md-6 mb-4 pb-2">
       <div className="card blog rounded border-0 shadow overflow-hidden">
-        <Link href={`/post/${post.id}`}>
+        <Link href={`/post/${post.id}`} prefetch as={`/post/${post.id}`}>
           <div className="position-relative">
             <Image src={'/asset/images/blog/01.jpg'} width={120} height={240} className="card-img-top" alt="..." />
             <div className="overlay rounded-top" />
