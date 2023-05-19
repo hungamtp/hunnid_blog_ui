@@ -69,7 +69,7 @@ const BlogDetail = () => {
                   {/*end icon*/}
                 </div>
                 <div className="col-md-10">
-                  {data && data.content}
+                  {data && <div dangerouslySetInnerHTML={{ __html: `${data.content}` }}></div>}
                   {/* <p className="text-muted">
                     This is required when, for example, the final text is not yet available. Dummy text is also known as 'fill text'. It is
                     said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made'
