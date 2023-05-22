@@ -24,7 +24,18 @@ const Post = ({ post }) => {
           </Link>
           <div className="flex justify-end">
             {post.tags.map(tag => {
-              return <Chip key={tag.id} label={tag.tag} id={tag.id} color="success" clickable={true} variant="outlined" size="small" />;
+              return (
+                <Chip
+                  className="mr-1"
+                  key={tag.id}
+                  label={tag.tag}
+                  id={tag.id}
+                  color="success"
+                  clickable={true}
+                  variant="outlined"
+                  size="small"
+                />
+              );
             })}
           </div>
         </div>

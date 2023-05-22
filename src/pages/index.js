@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import Filter from 'components/common/filter';
 import { LanguageData } from '@/utils/languageContext';
 import { useGetTags } from 'services/getTag';
-import RotateLeftIcon from '@mui/icons-material/RotateLeft';
+import SearchBar from '@/components/common/search-bar';
 const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);
@@ -38,24 +38,7 @@ const Home = () => {
         <section className="section">
           <div className="container">
             <div className="filter-section" style={{ marginBottom: '20px' }}>
-              <div className="text-center subcribe-form">
-                <form style={{ maxWidth: '800px' }} autocomplete="off">
-                  <div className="mb-0">
-                    <input
-                      type="text"
-                      id="help"
-                      autocomplete="off"
-                      name="name"
-                      class="border bg-white rounded-pill"
-                      required=""
-                      placeholder="Search"
-                    />
-                    <button type="submit" className="btn btn-pills btn-primary">
-                      Search
-                    </button>
-                  </div>
-                </form>
-              </div>
+              <SearchBar />
             </div>
             <div className="row">
               {posts

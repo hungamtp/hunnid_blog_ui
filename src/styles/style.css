@@ -230,4 +230,22 @@ select{
 .title-editor:focus{
     outline: none;
 }
+.search-result-bar{
+    position: absolute;
+    top: 10;
+    z-index: 2;
+    max-width: 760px;
+    text-align: center;
+    border-left: #44c767 1px solid;
+    border-right: #44c767 1px solid;
+    border-bottom: #44c767 1px solid;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+    opacity: 0.8;
+}
 
+.search-result{
+    display: flex;
+    justify-content: center;
+
+}
