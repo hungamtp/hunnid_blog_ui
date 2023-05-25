@@ -8,7 +8,7 @@ const Footer = () => {
               <div className="row">
                 <div className="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
                   <a href="#" className="logo-footer">
-                    <img src="asset/images/logo-light.png" height={24} alt="" />
+                    <img src="asset/images/blog/01.jbg" height={24} alt="" />
                   </a>
                   <p className="mt-4">Go hard or go home</p>
                   <ul className="list-unstyled social-icon foot-social-icon mb-0 mt-4">
