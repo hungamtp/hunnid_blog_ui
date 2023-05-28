@@ -284,8 +284,9 @@ select{
 .read-more-btn {  
     border-radius: 5px 5px 5px 5px;
     padding:0px 10px 0px 10px; 
-    color: #44c767;
+    color: black;
   }
+
 .read-more-btn::before {  
     transform: scaleX(0);
     transform-origin: bottom right;
@@ -294,6 +295,11 @@ select{
   .read-more-btn:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
+
+  }
+
+  .read-more-btn:hover{
+    color: white;
   }
   
   .read-more-btn::before {
@@ -302,7 +308,8 @@ select{
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     inset: 0 0 0 0;
-    background: hsl(102 100% 80%);
+    background: #4f4f50;
+    color: white;
     border-radius: 10px;
     z-index: -1;
     transition: transform .3s ease;
@@ -337,3 +344,7 @@ select{
   .logo-item{
     margin: -15px !important;
   }
+
+
+  /* background : #4f4f50
+  text-color #dfe0e0 */

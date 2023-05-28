@@ -31,7 +31,7 @@ const Post = ({ post }) => {
           </div>
           <Link href={`/post/${post.id}`} prefetch as={`/post/${post.id}`}>
             <div className="read-more-btn-section">
-              <div className="read-more-btn">read more&gt;</div>
+              <div className="read-more-btn">&lt;read more/&gt;</div>
             </div>
           </Link>
         </div>
