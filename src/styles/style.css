@@ -275,10 +275,11 @@ select{
 }
 
 .post-content{
-    color: #dee2e7 ;
+    color: black ;
     font-size: small;
     display: flex;
     align-content: flex-start;
+    font-weight: 100;
 }
 
 .read-more-btn {  
@@ -368,5 +369,14 @@ header{
     height: 40px;
 }
 
-  /* background : #4f4f50
-  text-color #dfe0e0 */
+.post-tag-section{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 100;
+    font-size: small;
+}
+
+.author-section{
+    display: flex;
+    justify-content: flex-start;
+}

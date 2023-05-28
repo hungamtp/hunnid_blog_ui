@@ -427,7 +427,7 @@ function MainLayout({ children }) {
             <div className="row align-items-center">
               <div className="col-sm-6">
                 <div className="text-sm-start">
-                  <p className="mb-0">social</p>
+                  <p className="mb-0">social.com</p>
                   <div className="social-section">
                     <div className="social-item">
                       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50">
