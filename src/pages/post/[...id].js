@@ -68,32 +68,8 @@ const BlogDetail = () => {
                   </ul>
                   {/*end icon*/}
                 </div>
-                <div className="col-md-10">
-                  {data && <div dangerouslySetInnerHTML={{ __html: `${data.content}` }}></div>}
-                  {/* <p className="text-muted">
-                    This is required when, for example, the final text is not yet available. Dummy text is also known as 'fill text'. It is
-                    said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made'
-                    text to sing with the melody.
-                  </p>
-                  <ul className="list-unstyled d-flex justify-content-between mt-4">
-                    <li className="list-inline-item user me-2">
-                      <a href="" className="text-muted">
-                        <i className="uil uil-user text-dark" /> Calvin Carlo
-                      </a>
-                    </li>
-                    <li className="list-inline-item date text-muted">
-                      <i className="uil uil-calendar-alt text-dark" /> 25th June 2021
-                    </li>
-                  </ul>
-                  <img src="/asset/images/blog/bg1.jpg" className="img-fluid rounded-md shadow" alt="" />
-                  <h5 className="mt-4">Mornings contain the secret to an extraordinarily successful life</h5>
-                  <p className="text-muted">
-                    Due to its widespread use as filler text for layouts, non-readability is of great importance: human perception is tuned
-                    to recognize certain patterns and repetitions in texts. If the distribution of letters and 'words' is random, the reader
-                    will not be distracted from making a neutral judgement on the visual impact and readability of the typefaces
-                    (typography), or the distribution of text on the page (layout or type area).
-                  </p> */}
-                </div>
+                <div className="col-md-10">{data && <div> {decodeURIComponent(data.content)} </div>}</div>
+                {/* <div className="col-md-10">{data && <div dangerouslySetInnerHTML={{ __html: decodeURI(data.content) }}></div>}</div> */}
               </div>
             </div>
           </div>

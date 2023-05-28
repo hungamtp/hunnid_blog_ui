@@ -49,6 +49,9 @@ function MainLayout({ children }) {
                 <a href="">CFF</a>
               </li>
               <li className="has-submenu parent-parent-menu-item">
+                <a href="photo">Photo</a>
+              </li>
+              <li className="has-submenu parent-parent-menu-item">
                 <a href="">Tutor</a>
                 <span className="menu-arrow" />
                 <ul className="submenu">

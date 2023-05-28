@@ -53,9 +53,9 @@ const Manage = () => {
                   <TableCell align="right">{post.viewCount}</TableCell>
                   <TableCell align="right">
                     {post.hidden ? (
-                      <Button onClick={() => hide(post.id)}>Hide</Button>
+                      <Button onClick={() => hide(post.id)}>Show</Button>
                     ) : (
-                      <Button onClick={() => show(post.id)}>Show</Button>
+                      <Button onClick={() => show(post.id)}>Hide</Button>
                     )}
                   </TableCell>
                 </TableRow>

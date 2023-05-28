@@ -17,11 +17,10 @@ const PostSearch = ({ post }) => {
       </div>
       <div className="post-search-content">
         <div className="post-serch-title">
-          <div> {post.title}</div>
+          {post && <div dangerouslySetInnerHTML={{ __html: `${post.title}` }}></div>}
           <div> {post.createdDate}</div>
         </div>
-
-        <div className="post-content"> {post.content}</div>
+        <div className="post-content">{post && <span dangerouslySetInnerHTML={{ __html: `${post.content}` }}></span>}</div>
       </div>
     </div>
   );
