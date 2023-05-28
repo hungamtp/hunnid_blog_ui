@@ -37,7 +37,11 @@ function MainLayout({ children }) {
                 <div className="header-item">cff</div>
               </li>
               <li className="has-submenu parent-parent-menu-item">
-                <div className="header-item">photo</div>
+                <div className="header-item">
+                  <Link className="header-item" href="/photo">
+                    photo
+                  </Link>
+                </div>
               </li>
               <li className="has-submenu parent-parent-menu-item">
                 <div className="header-item">tutor</div>
@@ -400,10 +404,18 @@ function MainLayout({ children }) {
                 </ul>
               </li>
               <li className="has-submenu parent-menu-item">
-                <div className="header-item">Porfolio</div>
+                <div className="header-item">
+                  <Link className="header-item" href="/porfolio">
+                    porfolio
+                  </Link>
+                </div>
               </li>
               <li className="has-submenu parent-parent-menu-item">
-                <div className="header-item">About Me</div>
+                <div className="header-item">
+                  <Link className="header-item" href="/about">
+                    me
+                  </Link>
+                </div>
               </li>
             </ul>
           </div>

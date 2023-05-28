@@ -345,6 +345,10 @@ select{
     margin: -15px !important;
   }
 
+  .header-item:hover{
+    color: black;
+  }
+
 
   /* background : #4f4f50
   text-color #dfe0e0 */
