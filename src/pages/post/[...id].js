@@ -68,8 +68,7 @@ const BlogDetail = () => {
                   </ul>
                   {/*end icon*/}
                 </div>
-                <div className="col-md-10">{data && <div> {decodeURIComponent(data.content)} </div>}</div>
-                {/* <div className="col-md-10">{data && <div dangerouslySetInnerHTML={{ __html: decodeURI(data.content) }}></div>}</div> */}
+                <div className="col-md-10">{data && <div dangerouslySetInnerHTML={{ __html: `${data.content}` }}></div>}</div>
               </div>
             </div>
           </div>
