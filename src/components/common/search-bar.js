@@ -3,6 +3,11 @@ import { LanguageData } from '@/utils/languageContext';
 import { useSearch } from 'services/useSearch';
 import { ClickAwayListener } from '@mui/material';
 import PostSearch from 'components/common/post-search';
+import Slide from '@mui/material';
+import Box from '@mui/material';
+import FormControlLabel from '@mui/material';
+import Switch from '@mui/material';
+import SearchResult from './search-result';
 const SearchBar = () => {
   const { language } = useContext(LanguageData);
 
@@ -16,13 +21,13 @@ const SearchBar = () => {
       setPostsData(res.data);
     });
   };
+  console.log(postsData);
   const handleOnChangeKeyword = e => {
     e.preventDefault();
     setKeyword(e.target.value);
   };
 
   const handleClickAway = () => {
-    console.log('object');
     setShown(false);
   };
 
@@ -48,9 +53,7 @@ const SearchBar = () => {
             </div>
           </form>
           <div className="search-result">
-            <div className="search-result-bar" style={{ display: `${shown ? 'block' : 'none'}` }}>
-              {postsData.length > 0 && postsData.map(post => <PostSearch post={post} />)}
-            </div>
+            <SearchResult shown={shown} data={postsData && postsData} />
           </div>
         </div>
       </ClickAwayListener>
