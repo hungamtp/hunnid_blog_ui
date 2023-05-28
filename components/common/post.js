@@ -22,7 +22,7 @@ const Post = ({ post }) => {
             <div style={{ display: 'flex' }}>
               {post.tags.map(tag => {
                 return (
-                  <div className="mr-1" key={tag.id}>
+                  <div className="mr-1" style={{ color: '#4f4f50' }} key={tag.id}>
                     #{tag.tag}
                   </div>
                 );

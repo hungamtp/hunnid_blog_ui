@@ -37,7 +37,7 @@ const Home = () => {
       <div>
         <section className="section">
           <div className="container">
-            <div className="filter-section" style={{ marginBottom: '20px' }}>
+            <div className="filter-section" style={{ marginBottom: '20px', marginTop: '-50px' }}>
               <SearchBar />
             </div>
             <div className="row">

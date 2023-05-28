@@ -35,7 +35,7 @@ const SearchBar = () => {
     <>
       <ClickAwayListener onClickAway={handleClickAway}>
         <div className="text-center subcribe-form search-form" style={{ position: 'relative' }}>
-          <form style={{ maxWidth: '800px' }} autocomplete="off">
+          <form style={{ maxWidth: '80%' }} autocomplete="off">
             <div className="mb-0">
               <input
                 type="text"
