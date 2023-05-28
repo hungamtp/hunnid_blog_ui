@@ -277,3 +277,47 @@ select{
     display: flex;
     align-content: flex-start;
 }
+
+.read-more-btn {  
+    border-radius: 5px 5px 5px 5px;
+    padding:0px 10px 0px 10px; 
+    color: #44c767;
+  }
+.read-more-btn::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .read-more-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .read-more-btn::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: hsl(102 100% 80%);
+    border-radius: 10px;
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+  .read-more-btn {
+    position: relative;
+    font-size: 1rem;
+  }
+  
+  
+  @media (orientation: landscape) {
+    read-more-btn-section {
+      grid-auto-flow: column;
+    }
+  }
+
+  .read-more-btn-section{
+    display: flex;
+    justify-content: flex-end;
+  }

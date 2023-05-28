@@ -22,21 +22,26 @@ const Post = ({ post }) => {
               <div className="card-title title text-dark">{post.title}</div>
             </h5>
           </Link>
-          <div className="flex justify-end">
-            {post.tags.map(tag => {
-              return (
-                <Chip
-                  className="mr-1"
-                  key={tag.id}
-                  label={tag.tag}
-                  id={tag.id}
-                  color="success"
-                  clickable={true}
-                  variant="outlined"
-                  size="small"
-                />
-              );
-            })}
+          <div className="post-tag-section " style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div className="flex justify-end">
+              {post.tags.map(tag => {
+                return (
+                  <Chip
+                    className="mr-1"
+                    key={tag.id}
+                    label={tag.tag}
+                    id={tag.id}
+                    color="success"
+                    clickable={true}
+                    variant="outlined"
+                    size="small"
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className="read-more-btn-section">
+            <div className="read-more-btn">read more &gt;</div>
           </div>
         </div>
         <div className="author">
