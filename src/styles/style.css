@@ -1,3 +1,6 @@
+html{
+    text-transform: lowercase !important;
+}
 blockquote{
     border-left: 2px solid #ddd;
     margin-left: 0;
@@ -320,4 +323,17 @@ select{
   .read-more-btn-section{
     display: flex;
     justify-content: flex-end;
+  }
+
+  .header-item{
+    margin: 10px;
+    color: #dfe0e0;
+  }
+  .language-item{
+    margin: -15px !important;
+    color: #dfe0e0;
+  }
+
+  .logo-item{
+    margin: -15px !important;
   }

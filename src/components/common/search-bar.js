@@ -45,10 +45,15 @@ const SearchBar = () => {
                 onChange={handleOnChangeKeyword}
                 class="border bg-white rounded-pill"
                 required=""
-                placeholder="Search"
+                placeholder="search"
               />
-              <button type="submit" className="btn btn-pills btn-primary" onClick={handleSearch}>
-                Search
+              <button
+                type="submit"
+                className="btn btn-pills"
+                style={{ backgroundColor: '#4f4f50', color: '#dfe0e0' }}
+                onClick={handleSearch}
+              >
+                search
               </button>
             </div>
           </form>

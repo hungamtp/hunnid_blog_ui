@@ -2852,12 +2852,7 @@ p {
   #topnav .navbar-header {
     float: left;
   }
-  #topnav .buy-button .login-btn-primary {
-    display: inline-block !important;
-  }
-  #topnav .buy-button .login-btn-light {
-    display: none;
-  }
+
   #topnav .has-submenu .submenu .submenu-arrow {
     transform: rotate(45deg);
     position: absolute;

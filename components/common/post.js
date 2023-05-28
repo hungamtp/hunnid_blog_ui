@@ -19,26 +19,19 @@ const Post = ({ post }) => {
             <div className="card-title title text-dark">{post.title}</div>
           </h5>
           <div className="post-tag-section " style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div className="flex justify-end">
+            <div style={{ display: 'flex' }}>
               {post.tags.map(tag => {
                 return (
-                  <Chip
-                    className="mr-1"
-                    key={tag.id}
-                    label={tag.tag}
-                    id={tag.id}
-                    color="success"
-                    clickable={true}
-                    variant="outlined"
-                    size="small"
-                  />
+                  <div className="mr-1" key={tag.id}>
+                    #{tag.tag}
+                  </div>
                 );
               })}
             </div>
           </div>
           <Link href={`/post/${post.id}`} prefetch as={`/post/${post.id}`}>
             <div className="read-more-btn-section">
-              <div className="read-more-btn">read more &gt;</div>
+              <div className="read-more-btn">read more&gt;</div>
             </div>
           </Link>
         </div>

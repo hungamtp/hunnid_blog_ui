@@ -14,46 +14,34 @@ function MainLayout({ children }) {
   };
   return (
     <>
-      <header id="topnav" className="defaultscroll sticky bg-white">
+      <header id="topnav" className="defaultscroll sticky" style={{ backgroundColor: '#4f4f50', height: '40px' }}>
         <div className="container">
-          <Link className="logo" href="/">
+          <Link className="logo logo-item" href="/">
             <Image src="/asset/icon/temp-icon.png" height={30} width={30} className="logo-light-mode" alt="" />
           </Link>
-          <ul className="buy-button list-inline mb-0">
-            <div className="list-inline-item ps-1 mb-0 ">
-              <li>
-                <Fade in={checked} timeout={800}>
-                  <div
-                    className="btn btn-icon btn-pills btn-light"
-                    onClick={() => handleChange('EN')}
-                    style={{ display: !checked ? 'none' : 'flex' }}
-                  >
-                    VN
-                  </div>
-                </Fade>
-                <Fade in={!checked} timeout={800}>
-                  <div
-                    className="btn btn-icon btn-pills btn-dark"
-                    onClick={() => handleChange('VN')}
-                    style={{ display: checked ? 'none' : 'flex' }}
-                  >
-                    EN
-                  </div>
-                </Fade>
-              </li>
-            </div>
+          <ul className="buy-button">
+            <Fade in={checked} timeout={800}>
+              <div className="language-item" onClick={() => handleChange('EN')} style={{ display: !checked ? 'none' : 'flex' }}>
+                vn
+              </div>
+            </Fade>
+            <Fade in={!checked} timeout={800}>
+              <div className="language-item" onClick={() => handleChange('VN')} style={{ display: checked ? 'none' : 'flex' }}>
+                en
+              </div>
+            </Fade>
           </ul>
           <div id="navigation">
             <ul className="navigation-menu">
               <li className="has-submenu parent-parent-menu-item">
-                <a href="">CFF</a>
+                <div className="header-item">cff</div>
               </li>
               <li className="has-submenu parent-parent-menu-item">
-                <a href="photo">Photo</a>
+                <div className="header-item">photo</div>
               </li>
               <li className="has-submenu parent-parent-menu-item">
-                <a href="">Tutor</a>
-                <span className="menu-arrow" />
+                <div className="header-item">tutor</div>
+
                 <ul className="submenu">
                   <li className="has-submenu parent-menu-item">
                     <a href=""> Company </a>
@@ -95,11 +83,11 @@ function MainLayout({ children }) {
                     <a href=""> Account </a>
                     <span className="submenu-arrow" />
                     <ul className="submenu">
-                      <li>
+                      <div>
                         <a href="account-profile.html" className="sub-menu-item">
                           Profile
                         </a>
-                      </li>
+                      </div>
                       <li>
                         <a href="account-members.html" className="sub-menu-item">
                           Members
@@ -412,10 +400,10 @@ function MainLayout({ children }) {
                 </ul>
               </li>
               <li className="has-submenu parent-menu-item">
-                <a href="">Porfolio</a>
+                <div className="header-item">Porfolio</div>
               </li>
               <li className="has-submenu parent-parent-menu-item">
-                <Link href="/about">About Me</Link>
+                <div className="header-item">About Me</div>
               </li>
             </ul>
           </div>
