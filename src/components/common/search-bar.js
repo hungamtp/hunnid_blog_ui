@@ -21,7 +21,7 @@ const SearchBar = () => {
       setPostsData(res.data);
     });
   };
-  console.log(postsData);
+
   const handleOnChangeKeyword = e => {
     e.preventDefault();
     setKeyword(e.target.value);
