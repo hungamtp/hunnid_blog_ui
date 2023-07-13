@@ -1,4 +1,4 @@
-import MainLayout from 'components/layouts/main';
+
 import Post from 'components/common/post';
 import { useState, useEffect } from 'react';
 import { useGetPosts } from 'services/getPost';
@@ -8,6 +8,7 @@ import Filter from 'components/common/filter';
 import { LanguageData } from '@/utils/languageContext';
 import { useGetTags } from 'services/getTag';
 import SearchBar from '@/components/common/search-bar';
+import MainLayout from 'components/layouts/main';
 const Home = () => {
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(9);

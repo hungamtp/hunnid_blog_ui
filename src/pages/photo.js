@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { PhotoAlbum } from 'react-photo-album';
 import { Slider } from '@mui/material';
-const { default: MainLayout } = require('components/layouts/main');
+const { default: MainLayout } = require('components/layouts/main1');
 
 const Photo = () => {
   const [spacing, setSpacing] = useState(50);

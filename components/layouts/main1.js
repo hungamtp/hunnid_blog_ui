@@ -4,19 +4,16 @@ import { Fade } from "@mui/material";
 import { useState } from "react";
 import { LanguageData } from "@/utils/languageContext";
 import { useContext } from "react";
-function MainLayout({ children }) {
-    const [checked, setChecked] = useState(false);
-    const { setLanguage } = useContext(LanguageData);
-    const handleChange = (language) => {
-      setChecked((prev) => !prev);
-      setLanguage(language);
-    };
+function MainLayout1({ children }) {
+  const [checked, setChecked] = useState(false);
+  const { setLanguage } = useContext(LanguageData);
+  const handleChange = (language) => {
+    setChecked((prev) => !prev);
+    setLanguage(language);
+  };
   return (
-    
     <>
-      <div className="nav header-nav">
-      
-        <nav className="nav__pc">
+      <header className="header-nav">
         <div className="header-container">
           <Link className="nav-link" href="/">
             {/* <Image
@@ -47,7 +44,7 @@ function MainLayout({ children }) {
                 <div
                   className="language-item"
                   onClick={() => handleChange("EN")}
-                  style={{ display: !checked ? "none" : "flex" , color: "white" }}
+                  style={{ display: !checked ? "none" : "flex" }}
                 >
                   vn
                 </div>
@@ -56,62 +53,14 @@ function MainLayout({ children }) {
                 <div
                   className="language-item"
                   onClick={() => handleChange("VN")}
-                  style={{ display: checked ? "none" : "flex", color: "white" }}
+                  style={{ display: checked ? "none" : "flex" }}
                 >
                   en
                 </div>
               </Fade>
           </div>
         </div>
-        </nav>
-        <label for="nav__input" className="nav__bar-btn">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fas"
-            data-icon="bars"
-            className="svg-inline--fa fa-bars fa-w-14"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-          >
-            <path
-              fill="currentColor"
-              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-            ></path>
-          </svg>
-        </label>
-        <label for="nav__input" className="nav__overlay"></label>
-        <input type="checkbox" class='nav__input' name="" id="nav__input"/>
-        <nav className="nav__mobile">
-        <ul class="nav__mobile-list">
-          <li><a href="" class="nav__mobile-link">Home</a></li>
-          <li><a href="" class="nav__mobile-link">About</a></li>
-          <li><a href="" class="nav__mobile-link">Category</a></li>
-          <li><a href="" class="nav__mobile-link">News</a></li>
-          <li><a href="" class="nav__mobile-link">Contact</a></li>
-        </ul>
-
-          <label for="nav__input" className="nav__mobile-btn">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="times"
-              color="white"
-              className="svg-inline--fa fa-times fa-w-11"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 352 512"
-            >
-              <path
-                fill="currentColor"
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-              ></path>
-            </svg>
-          </label>
-        </nav>
-      </div>
+      </header>
       <div>{children}</div>
       <footer className="footer footer-layout">
         <div className="footer-py-30 footer-bar">
@@ -183,4 +132,4 @@ function MainLayout({ children }) {
   );
 }
 
-export default MainLayout;
+export default MainLayout1;
