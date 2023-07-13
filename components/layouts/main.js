@@ -97,34 +97,51 @@ function MainLayout({ children }) {
         <nav className="nav__mobile">
           <ul class="nav__mobile-list">
             <li>
-              <a href="" class="nav__mobile-link">
-                Home
-              </a>
+            <Link className="nav-link" href="/photo">
+                cff
+              </Link>
             </li>
             <li>
-              <a href="" class="nav__mobile-link">
-                About
-              </a>
+            <Link className="nav-link" href="/photo">
+                photo
+              </Link>
             </li>
             <li>
-              <a href="" class="nav__mobile-link">
-                Category
-              </a>
+            <Link className="nav-link" href="/porfolio">
+                porfolio
+              </Link>
             </li>
             <li>
-              <a href="" class="nav__mobile-link">
-                News
-              </a>
+            <Link className="nav-link" href="/about">
+                me
+              </Link>
             </li>
             <li>
-              <a href="" class="nav__mobile-link">
-                Contact
-              </a>
+            <Fade in={checked} timeout={800} className="hd-item">
+                <div
+                  className="language-item"
+                  onClick={() => handleChange("EN")}
+                  style={{
+                    display: !checked ? "none" : "flex",
+                    color: "white",
+                  }}
+                >
+                  vn
+                </div>
+              </Fade>
+              <Fade in={!checked} timeout={800}>
+                <div
+                  className="language-item"
+                  onClick={() => handleChange("VN")}
+                  style={{ display: checked ? "none" : "flex", color: "white" }}
+                >
+                  en
+                </div>
+              </Fade>
             </li>
           </ul>
-
           <label for="nav__input" className="nav__mobile-btn closed-btn">
-            X
+           <div style={{fontSize :"25px"}}> X</div>
           </label>
         </nav>
       </div>

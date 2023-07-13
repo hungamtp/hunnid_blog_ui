@@ -1,4 +1,4 @@
-const { default: MainLayout } = require('components/layouts/main1');
+const { default: MainLayout } = require('components/layouts/main');
 
 const AboutMe = () => {
   return <div>hung</div>;

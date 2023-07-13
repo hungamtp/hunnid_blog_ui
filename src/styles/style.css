@@ -440,8 +440,6 @@ align-self: center;
     position: absolute;
     top: 0;
     right: 0;
-    width:20px;
-    height: 20px;
     padding: 10px;
     cursor: pointer;
     color: white;
@@ -467,9 +465,9 @@ align-self: center;
   }
 
   .footer{
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
   }
 
   @media (max-width:1023px){
@@ -486,3 +484,14 @@ align-self: center;
   #nav__input{
     display: none;
   }
+  .nav__mobile-list{
+    list-style: none;
+  }
+
+  .nav__mobile-link{
+    color: white;
+  } 
+
+  .nav__mobile-link:hover{
+    color: blanchedalmond;
+  } 
