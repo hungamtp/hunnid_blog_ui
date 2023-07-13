@@ -5,49 +5,58 @@ import { useState } from "react";
 import { LanguageData } from "@/utils/languageContext";
 import { useContext } from "react";
 function MainLayout({ children }) {
-    const [checked, setChecked] = useState(false);
-    const { setLanguage } = useContext(LanguageData);
-    const handleChange = (language) => {
-      setChecked((prev) => !prev);
-      setLanguage(language);
-    };
+  const [checked, setChecked] = useState(false);
+  const { setLanguage } = useContext(LanguageData);
+  const handleChange = (language) => {
+    setChecked((prev) => !prev);
+    setLanguage(language);
+  };
   return (
-    
     <>
       <div className="nav header-nav">
-      
         <nav className="nav__pc">
-        <div className="header-container">
-          <Link className="nav-link" href="/">
-            {/* <Image
+          <div className="header-container">
+            <Link className="nav-link" href="/">
+              {/* <Image
               src="/asset/icon/icon.png"
               height={30}
               width={30}
               className="logo-light-mode"
               alt=""
             /> */}
-            <div>logo</div>
-          </Link>
-          <div className="hd-item">
-            <Link className="nav-link" href="/photo">cff</Link>
-          </div>
-          <div className="hd-item">
-            <Link className="nav-link" href="/photo">photo</Link>
-          </div>
+              <div>logo</div>
+            </Link>
+            <div className="hd-item">
+              <Link className="nav-link" href="/photo">
+                cff
+              </Link>
+            </div>
+            <div className="hd-item">
+              <Link className="nav-link" href="/photo">
+                photo
+              </Link>
+            </div>
 
-          <div className="hd-item">
-            <Link className="nav-link" href="/porfolio">porfolio</Link>
-          </div>
+            <div className="hd-item">
+              <Link className="nav-link" href="/porfolio">
+                porfolio
+              </Link>
+            </div>
 
-          <div className="hd-item">
-            <Link className="nav-link" href="/about" >me</Link>
-          </div>
-          <div className="hd-item">
+            <div className="hd-item">
+              <Link className="nav-link" href="/about">
+                me
+              </Link>
+            </div>
+            <div className="hd-item">
               <Fade in={checked} timeout={800} className="hd-item">
                 <div
                   className="language-item"
                   onClick={() => handleChange("EN")}
-                  style={{ display: !checked ? "none" : "flex" , color: "white" }}
+                  style={{
+                    display: !checked ? "none" : "flex",
+                    color: "white",
+                  }}
                 >
                   vn
                 </div>
@@ -61,8 +70,8 @@ function MainLayout({ children }) {
                   en
                 </div>
               </Fade>
+            </div>
           </div>
-        </div>
         </nav>
         <label for="nav__input" className="nav__bar-btn">
           <svg
@@ -81,34 +90,41 @@ function MainLayout({ children }) {
             ></path>
           </svg>
         </label>
-        <label for="nav__input" className="nav__overlay"></label>
-        <input type="checkbox" class='nav__input' name="" id="nav__input"/>
+        <label for="nav__input" className="nav__overlay">
+           <img src="assets/icon/x-icon.svg" alt="" />
+        </label>
+        <input type="checkbox" class="nav__input" name="" id="nav__input" />
         <nav className="nav__mobile">
-        <ul class="nav__mobile-list">
-          <li><a href="" class="nav__mobile-link">Home</a></li>
-          <li><a href="" class="nav__mobile-link">About</a></li>
-          <li><a href="" class="nav__mobile-link">Category</a></li>
-          <li><a href="" class="nav__mobile-link">News</a></li>
-          <li><a href="" class="nav__mobile-link">Contact</a></li>
-        </ul>
+          <ul class="nav__mobile-list">
+            <li>
+              <a href="" class="nav__mobile-link">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="" class="nav__mobile-link">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="" class="nav__mobile-link">
+                Category
+              </a>
+            </li>
+            <li>
+              <a href="" class="nav__mobile-link">
+                News
+              </a>
+            </li>
+            <li>
+              <a href="" class="nav__mobile-link">
+                Contact
+              </a>
+            </li>
+          </ul>
 
-          <label for="nav__input" className="nav__mobile-btn">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="times"
-              color="white"
-              className="svg-inline--fa fa-times fa-w-11"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 352 512"
-            >
-              <path
-                fill="currentColor"
-                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-              ></path>
-            </svg>
+          <label for="nav__input" className="nav__mobile-btn closed-btn">
+            X
           </label>
         </nav>
       </div>

@@ -402,10 +402,13 @@ align-self: center;
   }
   .nav__bar-btn{
     display: none;
+    margin-top: 10px;
+    margin-left: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;
     position: absolute;
+    z-index: 1;
     left: 0;
   }
   .nav__overlay{
@@ -441,6 +444,7 @@ align-self: center;
     height: 20px;
     padding: 10px;
     cursor: pointer;
+    color: white;
   }
   .nav__input:checked ~ .nav__mobile{
     transform: translateX(0);
@@ -453,7 +457,7 @@ align-self: center;
     width: 30px;
     height: 30px;
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     top: 0;
     left: 0;
 
@@ -461,6 +465,13 @@ align-self: center;
   .nav__pc{
     width: 70%;
   }
+
+  .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
   @media (max-width:1023px){
     .nav__bar-btn{
       display: block;
@@ -472,9 +483,6 @@ align-self: center;
         display: block;
     }
   }
-
-  .footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  #nav__input{
+    display: none;
   }
