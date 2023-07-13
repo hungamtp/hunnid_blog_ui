@@ -336,10 +336,6 @@ select{
     margin: 10px;
     color: #dfe0e0;
   }
-  .language-item{
-    margin: -15px !important;
-    color: #dfe0e0;
-  }
 
   .logo-item{
     margin: -15px !important;
@@ -379,4 +375,24 @@ header{
 .author-section{
     display: flex;
     justify-content: flex-start;
+}
+.header-nav{
+    display: flex;
+    justify-content: center;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+.hd-item{
+align-self: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+.nav-link:hover{
+    color: blanchedalmond;
 }
