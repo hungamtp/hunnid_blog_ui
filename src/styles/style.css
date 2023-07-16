@@ -466,8 +466,11 @@ align-self: center;
 
   .footer{
     width: 100%;
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: white;
+    text-align: center;
   }
 
   @media (max-width:1023px){
