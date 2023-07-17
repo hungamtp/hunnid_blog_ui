@@ -10,15 +10,21 @@ import { CreatePostData } from '@/utils/create-post-context';
 import { PostContentTypeData } from '@/utils/post-content-type-context';
 import { serializer } from '@/components/SlateEditor/utils/serializer';
 import { createPost } from 'services/useCreatePost';
-
+import { useRouter } from 'next/router';
 import { CurrentAdminTabData } from '@/utils/current-admin-tab';
 import Manage from '@/components/common/manage';
 const Admin = () => {
+  const router = useRouter();
+  if (typeof window !== 'undefined') {
+    window.localStorage.setItem('token', router.query['token']);
+  }
+
   useGetContentType();
   useGetLanguages();
   const { currentAdminTab, setCurrentAdminTab } = useContext(CurrentAdminTabData);
   const { savedPost, setSavedPost } = useContext(CreatePostData);
   const { postContentType } = useContext(PostContentTypeData);
+
   const handleCreatePost = () => {
     const postContentId = postContentType.filter(type => type.type == 'POST_CONTENT')[0].id;
     const newContent = [...savedPost.contents];
