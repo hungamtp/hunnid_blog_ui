@@ -1,4 +1,3 @@
-import { useMutation } from 'react-query';
 import { URL } from 'constraints/env';
 import axios from 'axios';
 
