@@ -42,7 +42,7 @@ const BlogDetail = () => {
               <div className="row">
                 <div className="col-md-2 d-none d-md-block">
                   <ul className="list-unstyled text-center sticky-bar social-icon mb-0">
-                    <li className="mb-3 h6">Share</li>
+                    {/* <li className="mb-3 h6">Share</li>
                     <li>
                       <a href="" className="rounded">
                         <i data-feather="facebook" className="fea icon-sm fea-social" />
@@ -57,7 +57,7 @@ const BlogDetail = () => {
                       <a href="" className="rounded">
                         <i data-feather="twitter" className="fea icon-sm fea-social" />
                       </a>
-                    </li>
+                    </li> */}
                     <li>
                       <a href="" className="rounded">
                         <i data-feather="linkedin" className="fea icon-sm fea-social" />
