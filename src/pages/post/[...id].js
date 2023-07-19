@@ -58,11 +58,11 @@ const BlogDetail = () => {
                         <i data-feather="twitter" className="fea icon-sm fea-social" />
                       </a>
                     </li> */}
-                    <li>
+                    {/* <li>
                       <a href="" className="rounded">
                         <i data-feather="linkedin" className="fea icon-sm fea-social" />
                       </a>
-                    </li>
+                    </li> */}
                     {data && data.date.split('-').map(str => <li>{str}</li>)}
                     <liv>{data && data.viewCount}</liv>
                   </ul>
