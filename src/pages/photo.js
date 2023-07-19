@@ -520,19 +520,19 @@ const Photo = () => {
   ];
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '50px' }}>
-        {/* <div style={{ marginTop: '100px', marginRight: '50px' }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '0px' }}>
+        <div style={{ marginTop: '0px', marginRight: '50px' }}>
           <div>Spacing: {spacing}</div>
           <Slider sx={{ width: 200 }} aria-label="Volume" value={spacing} onChange={handleChangeSpacing} max={100} min={0} />
         </div>
-        <div style={{ marginTop: '100px', marginRight: '50px' }}>
+        <div style={{ marginTop: '0px', marginRight: '50px' }}>
           <div>Column :{column}</div>
           <Slider sx={{ width: 100 }} aria-label="Volume" value={column} onChange={handleChangeColumn} max={100} min={7} />
-        </div> */}
-        {/* <div style={{ marginTop: '100px', marginRight: '50px' }}>
+        </div>
+        <div style={{ marginTop: '0px', marginRight: '50px' }}>
           <div>Padding :{padding}</div>
           <Slider sx={{ width: 100 }} aria-label="Volume" value={padding} onChange={handleChangePadding} max={50} min={0} />
-        </div> */}
+        </div>
       </div>
       <div style={{ padding: '10px' }}>
         <PhotoAlbum photos={photos} spacing={spacing} layout="masonry" columns={column} padding={padding} />

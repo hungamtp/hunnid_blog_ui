@@ -348,6 +348,13 @@ select{
   .footer-layout{
     background :black;
     color: white;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    padding: 10px;
   }
 
   .social-section{
@@ -464,14 +471,6 @@ align-self: center;
     width: 70%;
   }
 
-  .footer{
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    color: white;
-    text-align: center;
-  }
 
   @media (max-width:1023px){
     .nav__bar-btn{

@@ -146,7 +146,7 @@ function MainLayout({ children }) {
         </nav>
       </div>
       <div className="body-children">{children}</div>
-      <footer className="footer footer-layout">
+      <footer className="footer-layout">
         <div className="footer-py-30 footer-bar">
           <div className="container text-center">
             <div className="row align-items-center">
